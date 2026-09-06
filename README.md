@@ -212,3 +212,63 @@ STRIDE
 DREAD
 
 MAESTRO framework
+
+Open Web Application Security Project (OWASP) Top 10
+
+Prompt injection involves manipulating inputs sent to LLM to change the behavior of the LLM or to leak information. This vulnerability override system prompts or instructions. This threat occurs in when user prompts are parsed and merged with system-level instructions.
+
+Sensitive information disclosure occurs when the model unintentionally reveals private or proprietary data, often due to being trained on datasets that contain confidential or internal information or lacking proper output filtering.
+
+Supply chain vulnerabilities introduce risk, particularly when third-party models, datasets, or plugins are integrated without thorough security review and improper patch managements. These external components might have vulnerabilities with public exploits allowing attackers to infiltrate into downstream systems.
+
+Allowing malicious actors to change model behavior through tampered training or fine-tuning data. This can enable a change in how the model interprets future inputs or output biases, or provides harmful content to users.
+
+ Output Handling
+
+Improper output handling arises when generated responses are used directly in applications—like automation scripts or Application Programming Interface (API) calls—without verification. Since model outputs can include unsafe commands or embedded code, this can lead to vulnerabilities like SSRF, XSS, remote code execution, etc.
+
+Excessive Agency occurs when LLMs are granted access controls for tools, systems, or workflows. The misconfigurations or excessive permissions will allow the LLM to perform actions it wasn't meant to. This can lead to unauthorized tasks, misuse of privileges, or operational failures.
+
+System Prompt Leakage: Attackers can manipulate the model into revealing system prompts or instructions. These instructions are responsible teaching the model how it must respond back to user. This often occurs due to a lack of segregation between user and system contexts. These prompts can be reverse-engineered to exploit the system further.
+
+Vector and Embedding Weakness: This relates to how LLMs store and retrieve semantic information. Misconfigured embedding spaces can allow attackers to reconstruct sensitive content or manipulate search results by injecting malicious content.
+
+ Misinformation
+
+Misinformation: Hallucinations or biases that would impact decision-making of the user is another security risk. This occurs when outputs are not validated with reliable sources.
+
+ Unbounded Consumption: Without strict rate limits or query filters, LLMs can be abused—intentionally or unintentionally—leading to uncontrollable consumption of backend services, which can impact the operational costs, or even denial of service.
+
+ Machine Learning (ML) Top 10
+
+ 	
+Input manipulation occurs when an attacker crafts a malicious input to exploit the model's behavior. It targets the decision phase, where even small changes to input can trigger incorrect predictions or bypass controls.
+
+Data Poisoning Attack: A threat where attackers inject misinformation or malicious data into the training dataset. This occurs when data sources are not authenticated or validated. This leads to the model being trained on incorrect data, causing biased behavior, changes in performance, or creating backdoors that activate under certain conditions.
+
+Model Inversion Attack: 	
+An attacker reverse engineers the model to get the sensitive information it is trained on. This happens when the history is used for training the model, which will enable the model to save the data, which can have sensitive information.
+
+ Membership Inference Attack: 	
+An attacker trains the model with a specific set of records and uses it to inquire the particular data that was used in the model's training data set. This allows the attacker to gain access for sensitive information.
+
+Model Theft: An attacker reverse engineers the organization's machine learning model to gain the access to training data and algorithm. Then the attacker clones the model and utilizes it for personal gain. This affects the proprietary model to causing finance loss and reputational damage to the organization.
+
+AI Supply Chain Attack: Developing ML systems includes a different software bill of materials, which includes data and model management platforms, including open-source packages as well. The attackers might use the publicly available exploits to infiltrate the ML systems through the supply chain packages if not validated or patched properly.
+
+Transfer Learning Attack: 	
+When pre-trained models with inherited vulnerabilities are utilized for fine-tuning, this helps attackers to exploit the weakness and introduce malicious behavior. The pre-trained models can also have backdoors or biases if utilized without validation.
+
+Model Skewing: The behavior of a machine learning model is altered through biased or manipulated training or feedback data. This happens when systems learn from the requests and responses it has worked on. This would result in the model behaving biased, or a change in the accuracy of the model.
+
+Output Integrity Attack: 	An attacker tries to change or interfere with the final output of a machine learning model. If the access controls are improperly configured or invalidated, it can lead to tampering of output, which can share the misinformation back to the user and impact on decision-making.
+
+ Model Poisoning: Model poisoning is a type of attack where harmful data or code is intentionally added during the model's training or fine-tuning process. It occurs when the attacker changes the model parameters without affecting its original performance. It can have high impact, especially in automated systems, as they may process harmful inputs and cause change in output without detection.
+
+ MITRE Adversarial Threat Landscape for Artificial-Intelligence Systems (ATLAS) is a globally accessible framework developed to understand the various techniques and tactics adversaries use to attack AI and machine learning systems. It focuses on data poisoning and model evasion to imitate the extraction and misuse of AI functionality. It provides a structured knowledge base of attack scenarios, mapped tactics, and techniques during different phases of the life cycle.
+
+ ATLAS helps security teams by offering a common language and clear guidance for identifying, analyzing, and mitigating AI-specific threats. Its key aspects include mapping attacks to each phase of the machine learning pipeline and categorizing adversarial goals (such as affecting model availability, integrity, or confidentiality).
+
+ The NIST AI Risk Management Framework (AI RMF) is a structured guideline created to help organizations understand, evaluate, and manage risks associated with artificial intelligence systems. It focuses on promoting trustworthy and responsible AI by addressing concerns such as safety, security, fairness, privacy, explainability, and resilience. The framework is designed to be flexible and adaptable for a wide range of sectors and use cases, making it suitable for developers, operators, and decision-makers involved in AI systems.
+
+ The framework outlines the challenges for AI risk management, like measurement, tolerance, prioritization, and management. It is built around four core functions: map, measure, manage, and govern. These functions guide teams through identifying where AI risks exist, measuring their potential impact, managing those risks with appropriate controls, and establishing governance processes for long-term oversight.
