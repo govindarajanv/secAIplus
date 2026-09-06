@@ -138,7 +138,7 @@ A practical starting point is to deploy OpenAI Guardrails as a reverse proxy, wh
 
 ### Data Security
 
-Structured data plays a key role in traditional security analytics. This type of data includes firewall logs, NetFlow records, and indicators of compromise (IOC) lists, all of which are organized in specific formats that make them easier to analyze and us
+Structured data plays a key role in traditional security analytics. This type of data includes firewall logs, NetFlow records, and indicators of compromise (IOC) lists, all of which are organized in specific formats that make them easier to analyze and use in traditional security analytics.
 
 Semi-structured data sources are types of data formats that combine elements of both structured and unstructured data. Common examples include JSON, email headers, and YAML.
 
