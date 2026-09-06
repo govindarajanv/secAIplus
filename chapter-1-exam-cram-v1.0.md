@@ -16,6 +16,7 @@
 | **NLP** | Processes unstructured text | Analyze threat reports, logs, emails; extract IOCs; categorize threat intelligence |
 | **LLMs** | Large parameter counts, extensive knowledge | Summarizing threat reports, generating playbooks, conversational security bots |
 | **SLMs** | Fewer parameters, optimized for efficiency | Real-time log analysis, alert classification, resource-constrained appliances |
+| **DistilBERT** | Simple sentiment classification model | Produces only "negative" and "positive" labels |
 
 ### Model Training Techniques
 | Technique | Description | Notes |
@@ -36,7 +37,7 @@
 
 ### Model Validation & Risks
 - **Classic split**: Training set (learns), Validation set (quality checks), Test set (final unbiased estimate).
-- **k-fold cross-validation**: Splits data into k folds; trains k times, averaging test scores to reduce split variance.
+- **k-fold cross-validation**: Data is split into k equal parts (folds). The model is trained k times, each time holding one fold out to test the model and using the other k − 1 folds to train it. The average test score is taken, making the evaluation less dependent on any single lucky or unlucky data split.
 - **Overfitting**: Model memorizes training data and fails to generalize.
 - **Concept drift**: Real-world data patterns slowly change (e.g., spammers adopting new keywords).
 - **Silent data-poisoning attacks**: Adversaries subtly manipulate training data to embed hidden vulnerabilities.
@@ -70,7 +71,7 @@
 ### Data Types
 | Type | Examples | Characteristics |
 |------|----------|----------------|
-| **Structured** | Firewall logs, NetFlow, IOC lists | Organized in specific formats; easy to analyze |
+| **Structured** | Firewall logs, NetFlow, IOC lists | Organized in specific formats; easy to analyze; predictable fields enable SIEM/SOAR ingestion, enrichment, and automated playbook triggering |
 | **Semi-structured** | JSON, email headers, YAML | Combines elements of both structured and unstructured |
 | **Unstructured** | Packet payloads, chat transcripts, security camera images | No predefined format; requires NLP/image processing |
 

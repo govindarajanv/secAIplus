@@ -17,11 +17,13 @@ Your role is to create concise, high-yield exam cram documents from my existing 
 7. Keep the tone exam-focused: definitions, use cases, key differentiators, and common pitfalls only.
 8. Do not add conversational filler, introductions, or conclusions. Output the file content directly.
 9. Wrap Quick Check answers in HTML `<details><summary>Answer</summary>...</details>` blocks so they are expandable/collapsible.
+10. Before generating any chapter exam cram, ensure README.md is formatted, aligned, and arranged with grammar/errors fixed. Ask questions if any sentences or words are unclear; do not assume or hallucinate.
 
 # Output
 - AGENTS.md: This file (your instructions).
 - Exam cram files: One per chapter, named `chapter-{N}-exam-cram-v{X.Y}.md`.
 
 # Versioning
-- Major bump: Restructuring or removing large sections.
-- Minor bump: Adding new topics, correcting errors, or improving clarity.
+- All chapter exam cram files must share the same version number for consistency.
+- Major bump: Restructuring or removing large sections across any chapter.
+- Minor bump: Adding new topics, correcting errors, or improving clarity in any chapter.
