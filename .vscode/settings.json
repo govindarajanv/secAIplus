@@ -1,0 +1,23 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.iconTheme": "seti",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "terminal.integrated.defaultLocation": "bottom",
+  "terminal.integrated.height": 300,
+  "terminal.integrated.fontSize": 13,
+  "kilo.code": {
+    "panel": {
+      "position": "right",
+      "width": 480
+    }
+  },
+  "editor.fontSize": 14,
+  "editor.lineHeight": 22,
+  "editor.fontFamily": "Fira Code, Consolas, 'Courier New', monospace",
+  "editor.minimap.enabled": true,
+  "editor.renderWhitespace": "boundary",
+  "security.workspace.trust.enabled": true
+}
