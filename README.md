@@ -166,3 +166,49 @@ Attackers weaponize AI to automate reconnaissance, craft more convincing phishin
 - **Data balancing**: Techniques realign the training set so that rare yet critical events receive proportionate attention. Down‑sampling does the inverse, randomly discarding enough benign entries to match the minority count, preventing model bias toward the majority.
 
 Behavioral analytics engines identify anomalous data flows, such as an unexpected spike in training set size that could signal a poisoning attempt, while natural language models inspect data catalog metadata for compliance violations.
+
+## Chapter 2 - Implementing Threat Modeling and Securing AI Systems
+
+AI threat modeling is a process of identifying potential threats and analyzing the risks associated with AI systems.
+
+Attackers can jailbreak the AI models and perform data poisoning, which can lead to data integrity issues and spreading misinformation. Lack of rate limitation on the usage of AI leads to unlimited utilization of services, causing exhaustion of back-end resources, financial impact, and availability issues. Performing AI threat modeling in the early stages of Secure Software Development Life Cycle (SDLC) would help identify and prevent the risks associated with using AI in applications.
+
+Some of the widely recognized and used AI threat resources are the Massachusetts Institute of Technology (MIT) AI Risk Repository, the Common Vulnerabilities and Exposures (CVE) system, the AI Vulnerability Database (AVID), the AI Incident Database (AIID), and arXiv.
+
+MIT AI Risk Repository is one of the major sources of AI threats helping security personnel. The repository contains over 1,600 AI risks sourced from 65 existing frameworks, seven domains, and 24 subdomains. It includes the classification of AI risks into taxonomies on the basis of how, when, why, and in what domain the risks occurred. This repository is updated on a regular basis and acts as a live database.
+
+MIT AI risk repository contains three parts:
+
+- AI Risk database
+- Causal Taxonomy of AI Risks - This taxonomy classifies risks based on how they are originated and whether a risk is caused by a decision or action made by AI, human user/developer, or other external factors. It distinguishes whether the risk is caused intentionally, like the expected outcomes of a goal, unintentionally, or even classified as "other", which can't be determined.
+- Domain Taxonomy of AI Risks—The domain taxonomy classifies risks into seven AI risk domains and 23 subdomains, such as (1) Discrimination & Toxicity, (2) Privacy & Security, (3) Misinformation, (4) Malicious Actors & Misuse, (5) Human-Computer Interaction, (6) Socioeconomic & Environmental, and (7) AI System Safety, Failures, & Limitations.
+
+CVE AI workgroup is part of the common vulnerability enumeration (CVE) program, which is a committee of members from within the board of CVE, corporate members who perform vulnerability management, members of the AI community, and their associations.This group would analyze and identify AI threats, assigning them a CVE ID and making them part of the CVE database.
+
+AI Vulnerability Database (AVID) is an open-source knowledge base that collects data about failure modes for AI models, datasets, and systems. This database would provide a structured approach for security teams to identify, assess, and mitigate AI-specific vulnerabilities. Security teams or development teams, before deploying any AI component, can search AVID for known vulnerabilities that may affect the model, dataset, or application programming interface (API) they plan to use.
+
+AI Incident Database is a collection of AI incidents that happened in real-time. The collection includes vast information from the Internet on everyday threats caused by AI systems, like deepfakes, biases, and misuse of AI. This database helps security teams and researchers to study these incidents; threat hunters can identify common attack patterns and vulnerabilities that may exist in their own systems.
+
+arXiv is an open-source platform where researchers share scientific papers. It covers the research from different fields of study, including artificial intelligence (AI). Researchers around the world upload their latest findings to arXiv to share knowledge and get feedback from the community.
+
+The Common Weakness Enumeration (CWE) is a widely used framework for identifying and categorizing software vulnerabilities. With respect to AI and model security, CWE can be adapted to map real-world threats to specific types of system weaknesses. For example, CWE-77 (Command Injection) is relevant for prompt injection attacks where user input manipulates model instructions. CWE-200 (Exposure of Sensitive Information) aligns with risks like system prompt leakage or model inversion. 
+
+Create a list of all the AI frameworks available for performing threat modeling and choose the one that could fit the analysis of the current business use case of the application that will be developed. Some of the popular frameworks are given below:
+
+Open Web Application Security Project (OWASP) Top 10
+
+Large Language Model (LLM) Top 10
+
+Machine Learning (ML) Security Top 10
+
+MITRE Adversarial Threat Landscape for Artificial-Intelligence Systems (ATLAS)
+
+AI Risk Management Framework (NIST)
+
+Threat-modeling frameworks
+
+STRIDE
+
+DREAD
+
+MAESTRO framework
