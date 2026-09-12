@@ -497,3 +497,110 @@ Administrators must capture, analyze, and respond to AI system telemetry for per
 - **Prompt Optimization**:
   - **Prompt Compression**: Reduces prompt length and complexity while preserving semantic meaning, lowering token costs and speeding up inference.
 
+
+## Chapter 4 - Distinguishing AI-Related Threats and Compensating Controls
+
+### Security Across the AI Lifecycle
+
+- **Design Phase**:
+  - Incorporating security measures at the design stage includes performing threat modeling, identifying potential training data tampering, assessing the impact of outages on regulated services, and understanding compliance obligations that dictate data handling procedures.
+  - Sourcing and data verification: Attackers can poison data even when they cannot access it directly, making data provenance, integrity, and confidentiality controls essential.
+  - Implement hash-based immutability checks on raw log archives, tokenize personally identifiable information (PII), and apply privacy-preserving techniques.
+  - Publicly available datasets allow teams to prototype threat-detection models without exposing internal telemetry.
+  - Tools such as IBM's Adversarial Robustness Toolbox (ART) can examine datasets for outliers that could signal poisoning before training begins.
+  - The first line of defense is verifying data authenticity; teams must establish a clear chain of custody and incorporate tamper-evident mechanisms at each step.
+- **Model Development & Training Phase**:
+  - Shifts emphasis to code hygiene and environment hardening.
+  - Conduct dependency scanning of machine learning frameworks, enforce reproducible builds, and use isolated training networks to prevent supply chain attacks.
+  - Enhance model resilience through adversarial training, injecting crafted samples to verify model tolerance against evasion techniques.
+  - Select model architectures aligned with organizational governance and audit needs (e.g., speed, explainability, compliance).
+  - Enforce strong identity verification and continuous quality scoring for crowd-sourced data labelers to prevent malicious or low-quality contributions.
+- **Pre-Deployment & Validation Phase**:
+  - Validate model predictions against reference environments using blue-green rollouts or canary releases.
+  - Operate a formal **model registry** (an auditable system of record for model, dataset, and evaluation versions) and change-control processes for AI changes affecting security posture.
+  - High-impact rule or model promotions require documented human approvals (e.g., SOC manager, model owner, risk owner), designated change windows, active monitoring, and rollback plans.
+  - Integrate models into Security Information and Event Management (SIEM) platforms to establish closed-loop feedback channels for generated alerts and continuous verification.
+- **Runtime & Deployment Phase**:
+  - Runtime monitoring tracks features that drift beyond established training distributions, spikes in inference latency (indicating potential denial-of-service attacks), or unexpected calls to infrequently used elements.
+  - Automated response playbooks isolate suspicious inputs for human review, combining AI processing speed with human analytical judgment.
+- **Monitoring & Maintenance Phase**:
+  - Concept drift, new attack vectors, and evolving business priorities require regular retraining and redeployment.
+  - Secure feedback pipelines collect false positives, analyst annotations, and post-incident reports, channeling them back to data preparation.
+  - Conduct periodic red-teaming of models, manage patching for underlying libraries, and continuously reassess threat models to ensure continuous lifecycle improvement.
+
+### AI Lifecycle Attack Phases & Threat Mapping
+
+| Phase | Primary Threat Categories |
+|-------|--------------------------|
+| **Training** | Data poisoning, model poisoning, backdoor injection, bias injection |
+| **Inference** | Evasion attacks, input manipulation, prompt injection, jailbreaks, indirect prompt injection |
+| **Deployment** | Model theft, model inversion, membership inference, AI abuse, model denial of service (DoS) |
+
+### Human Oversight & Governance Framework
+
+- **Human-in-the-Loop (HITL)**:
+  - Ensures a qualified human analyst steps in at crucial points during decision-making.
+  - Prevents automated systems from executing critical, high-impact, or irreversible actions without direct human oversight and approval (e.g., drafting emails but requiring human send approval, or suggesting ticket updates gated behind analyst sign-off).
+- **Human Oversight**:
+  - Operates at a systemic level by continually monitoring overall model behavior and performance trends rather than individual transactions.
+  - Oversight teams review performance dashboards, audit logs, and metrics to ensure accuracy, safety, and fairness remain within agreed-upon tolerance levels.
+  - Authority to suspend automated operations when anomalies occur (e.g., a classifier suddenly flagging benign software as malicious after an update) until confidence is restored.
+  - Establishes formal escalation pathways to satisfy regulatory explainability and accountability mandates.
+- **Human Validation**:
+  - Independently samples model outputs and compares them to ground truth through expert reviews or controlled adversarial testing (e.g., periodically testing phishing classifiers with known benign and malicious emails).
+  - Uncovers blind spots caused by data drift, adversarial attacks, or unnoticed feature interactions.
+  - Generates documented audit trails demonstrating due diligence prior to security incidents.
+
+### Threat Vectors & Attack Classifications
+
+- **Data Poisoning & Model Poisoning**:
+  - **Data Poisoning**: Corrupts training datasets with malicious or misleading samples so the model learns distorted perspectives or exhibits compromised behavior.
+  - **Model Poisoning**: Attackers tamper with gradients, weights, or supply chain resources during training to manipulate outputs or embed hidden backdoors into model data, code, or runtime platforms.
+  - **Detection & Controls**: Monitor for unexpected shifts in training data quality using data drift detection; calculate similarity scores against trusted baselines; enforce reproducible training pipelines; insert and monitor canary records during training.
+- **Backdoor vs. Trojan Attacks**:
+  - **Backdoor Attack**: Embeds a hidden trigger into the model during training via data poisoning (e.g., training a self-driving vision system to interpret any stop sign with a blue sticker as a 60 mph speed limit sign).
+  - **Trojan Attack**: Hides malicious files, code, or payloads inside the AI model artifact or container itself. The model functions normally to users, but covertly executes malicious activity in the background (e.g., exfiltrating processed images to an attacker's command-and-control server). Trojans are typically introduced via compromised supply chains or build pipelines.
+- **Input Manipulation & Evasion Attacks**:
+  - Subtly modifies inputs (images, audio, text) so humans cannot perceive alterations, yet causes the model to misclassify or fail.
+  - **Detection & Controls**: Automated integrity checks, statistical anomaly detection on incoming inputs, language/acoustic analysis tools to identify unnatural modifications, and gating high-risk actions behind human approvals.
+- **Model Inversion vs. Membership Inference**:
+  - **Model Inversion**: Reconstructs sensitive training data by querying the model and observing output distributions and behaviors (e.g., inferring private patient clinical records from a medical model).
+  - **Membership Inference**: Determines whether a specific individual's data record was included in the model's training set by analyzing confidence scores and prediction probabilities.
+  - **Enabling Factors & Defenses**: Enabled by overfitting and over-precise confidence scores. Mitigated by differential privacy, output filtering, and rate limiting.
+- **Model Theft**:
+  - Attackers replicate proprietary model capabilities by reverse-engineering algorithms and training data through high-volume API querying (scraping/cloning) or directly exfiltrating model artifact files from CI/CD pipelines.
+  - **Defenses**: Strict rate limits, model artifact access controls, and deploying **decoy/honeypot endpoints** or fake system prompts to detect automated extraction activities.
+- **AI Supply Chain & Transfer Learning Attacks**:
+  - **Supply Chain Attacks**: Downloading untrusted pre-trained models, datasets, or libraries containing backdoors or vulnerabilities. Mitigated through dependency scanning, SBOMs, and provenance verification.
+  - **Transfer Learning Attacks**: Fine-tuning models based on base models that contain pre-existing backdoors or biases. Residual malicious behaviors can persist through fine-tuning. Mitigated by sourcing from trusted curators, inspecting activation patterns, fine-pruning, and canary testing.
+- **Sensitive Information Disclosure**:
+  - Unintentional exposure of private data, system prompts, API keys, or previous user session inputs in model responses or logs.
+  - **Defenses**: Strict output filtering, PII redaction, differential privacy, rate limiting, and continuous leakage monitoring.
+- **Model Skewing**:
+  - Gradual or sudden divergence of production data distributions from training distributions (data drift), which attackers may induce deliberately to cause predictable misclassifications or extract sensitive information while overall accuracy appears normal.
+- **Output Integrity & Insecure Output Handling**:
+  - Occurs when downstream systems (ticketing platforms, browser automation, databases) consume model outputs without validation, enabling injection vulnerabilities (XSS, SSRF, command injection).
+  - **Defenses**: Treat all AI outputs as untrusted input; enforce strict output schema validation; allow-list downstream actions; require out-of-band human approvals.
+- **Excessive Agency & Plugin Vulnerabilities**:
+  - Grants AI agents broad, unconstrained permissions to external tools, databases, inboxes, or cloud resources. Malicious inputs or flawed reasoning turn minor errors into catastrophic incidents.
+  - **Defenses**: Principle of least privilege, narrow tool scopes, isolated sandboxes, human approval for sensitive tools, and strict output validation.
+- **Chain of Thought (CoT) Compromise**:
+  - Step-by-step internal reasoning generated by models. Because models reuse earlier reasoning as context for subsequent steps, injected prompt manipulations within the chain can hijack the entire execution path.
+  - CoT traces may also leak intermediate secrets or sensitive data if unredacted or displayed. Protecting the integrity, confidentiality, and visibility of CoT reasoning is critical.
+- **Hallucinations & Inaccurate Outputs**:
+  - Models generate convincing but factually incorrect statements, commands, or non-existent API endpoints.
+  - **Detection & Controls**: Grounding checks against trusted data sources, cross-model validation (comparing responses from two independent models), factual consistency checks, and separating output generation from automated execution.
+- **Model Denial of Service (DoS)**:
+  - Exhausts model resources causing latency or downtime.
+  - **Defenses**: Rate limiting, token budgets, tool usage caps, timeout thresholds, and maximum reasoning chain depth restrictions.
+
+### Compensating Controls Summary
+
+- **Prompt Firewalls & Model Guardrails**: Prompt firewalls filter incoming inputs for malicious patterns (matching, classifiers, context awareness); guardrails enforce real-time logic and policy constraints on inputs and outputs.
+- **Schema Validation**: Predefines strict JSON schemas (fields, types, ranges) for model outputs. Non-conforming outputs are rejected immediately, blocking prompt injections, jailbreaks, and unauthorized data exfiltration.
+- **Data Integrity & Provenance**: Cryptographic hashing (e.g., SHA-256), blockchain-backed logging, and digital signatures ensure training data authenticity and detect unauthorized tampering.
+- **Prompt Templates**: Parameterize user inputs into standardized layouts, isolating user data from system instructions to prevent prompt injection.
+- **Decoy & Honeypot Endpoints**: Deployment of fake model endpoints that alert security teams upon unauthorized querying, facilitating early detection of model theft and scraping.
+- **Differential Privacy**: Adds calibrated mathematical noise to datasets or gradients (DP-SGD) to mask individual record contributions while preserving statistical utility.
+- **Access Control & Encryption**: Enforce Role-Based Access Control (RBAC) and least privilege for model access and management; encrypt models and datasets both at rest and in transit.
+
