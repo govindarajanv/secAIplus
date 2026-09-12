@@ -124,14 +124,26 @@
     }
 
     .badge-secai {
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 800;
-      padding: 0.35rem 0.7rem;
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #0b0f19;
+      font-size: 0.825rem;
+      font-weight: 900;
+      padding: 0.38rem 0.8rem;
       border-radius: var(--radius-sm);
-      letter-spacing: 0.06em;
-      box-shadow: 0 2px 10px rgba(37, 99, 235, 0.35);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+      box-shadow: 0 0 16px rgba(245, 158, 11, 0.55), 0 2px 6px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    [data-theme="light"] .badge-secai {
+      background: linear-gradient(135deg, #d97706, #dc2626);
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(217, 119, 6, 0.45);
     }
 
     .brand h1 {
@@ -360,12 +372,14 @@
     }
 
     .badge-weight {
-      background: var(--primary-light);
-      color: var(--primary);
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 0.2rem 0.55rem;
+      background: rgba(245, 158, 11, 0.18);
+      color: #f59e0b;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.65rem;
       border-radius: var(--radius-sm);
+      letter-spacing: 0.04em;
     }
 
     .cram-card h3 {
@@ -1203,7 +1217,7 @@
   <header>
     <div class="nav-container">
       <div class="brand" onclick="switchAppMode('cram')">
-        <span class="badge-secai">CY0-001</span>
+        <span class="badge-secai"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 16l-4-4 1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/></svg>CY0-001</span>
         <h1>SecAI+ <span>Exam Prep</span> Suite</h1>
       </div>
 
