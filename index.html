@@ -719,12 +719,13 @@
     <div class="controls-panel">
       <!-- Chapter Pills -->
       <div class="chapter-pills" id="chapterPills">
-        <button class="pill-btn active" data-chapter="all">All Chapters (91)</button>
+        <button class="pill-btn active" data-chapter="all">All Chapters (112)</button>
         <button class="pill-btn" data-chapter="1">Ch 1: AI & Data Concepts (17%)</button>
         <button class="pill-btn" data-chapter="2">Ch 2: Threat Modeling & Security (~40%)</button>
         <button class="pill-btn" data-chapter="3">Ch 3: Access Controls</button>
         <button class="pill-btn" data-chapter="4">Ch 4: Threats & Controls</button>
         <button class="pill-btn" data-chapter="5">Ch 5: AI Use & Misuse</button>
+        <button class="pill-btn" data-chapter="6">Ch 6: AI GRC & Frameworks</button>
       </div>
 
       <!-- Filter Bar -->
@@ -841,7 +842,7 @@
 
   <!-- Footer -->
   <footer>
-    CompTIA SecAI+ (CY0-001) Exam Cram Flashcards | Built for rapid revision across Chapters 1-5 | Keyboard: Space (Flip), ← / → (Prev/Next), M (Master), R (Review)
+    CompTIA SecAI+ (CY0-001) Exam Cram Flashcards | Built for rapid revision across Chapters 1-6 | Keyboard: Space (Flip), ← / → (Prev/Next), M (Master), R (Review)
   </footer>
 
   <script>
@@ -1846,6 +1847,237 @@
     "examTip": "Deepfake audio/video elevates spear phishing by mimicking trusted authority figures.",
     "isExamTip": false,
     "isQuickCheck": true
+  },
+{
+    "id": 92,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "AI Center of Excellence",
+    "question": "What are the five core functions of an enterprise AI Center of Excellence (AI CoE)?",
+    "answer": "1. Coordination Hub (unifying standards/taxonomies across silos)\n2. Unified Vision (aligning AI roadmaps with business strategy/risk appetite)\n3. Standardized Practices (reusable design patterns, toolchains, CI/CD gates)\n4. External Collaborations (academic, open source, and vendor partnerships)\n5. Talent Development (continuous training, security upskilling, and prompt engineering).",
+    "examTip": "AI CoE serves as the central coordination hub balancing innovation with security standardization.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 93,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "AI CoE Models",
+    "question": "Compare the Centralized, Federated, and Hybrid AI CoE positioning models.",
+    "answer": "\u2022 Centralized: Single team owns all AI strategy, tooling, and approvals. Highest security/compliance consistency, but creates bottlenecks.\n\u2022 Federated: Autonomous AI teams embedded in business units. High agility/domain focus, but creates silos, duplicate costs, and Shadow AI.\n\u2022 Hybrid (Most Common): Central CoE sets policies, standards, and guardrails; embedded business squads build and execute.",
+    "examTip": "Hybrid is the most common model\u2014it blends centralized governance with federated business agility.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 94,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Enterprise Roles",
+    "question": "What is the key functional distinction between a Data Scientist and a Machine Learning Engineer (MLE)?",
+    "answer": "\u2022 Data Scientist: Focuses on statistical modeling, EDA, hypothesis testing, algorithm selection, and initial prototype experimentation.\n\u2022 ML Engineer: Converts experimental prototypes into scalable, production-grade inference pipelines; optimizes latency, quantization, and hardware compute utilization.",
+    "examTip": "Data Scientists design and validate algorithms; ML Engineers productionize and scale them.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 95,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Enterprise Roles",
+    "question": "What is the functional difference between an MLOps Engineer and a Platform Engineer?",
+    "answer": "\u2022 Platform Engineer: Provisions and maintains raw infrastructure (Kubernetes clusters, GPU fabrics, distributed storage, VPCs).\n\u2022 MLOps Engineer: Manages ML lifecycle tooling on top of infrastructure (Model Registries, automated CI/CD/CT pipelines, drift detection, automated retraining).",
+    "examTip": "Platform Engineers manage compute/cloud infrastructure; MLOps Engineers manage ML lifecycle pipelines.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 96,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Enterprise Roles",
+    "question": "How do the roles of AI Security Architect and AI Governance Engineer differ?",
+    "answer": "\u2022 AI Security Architect: Conducts adversarial threat modeling, enforces runtime security guardrails, defends against prompt injection/jailbreaks, and validates supply chain integrity.\n\u2022 AI Governance Engineer: Implements technical compliance controls, automates audit artifacts (Model Cards, Datasheets), and integrates regulatory compliance gates into CI/CD.",
+    "examTip": "AI Security Architects defend against active threats; AI Governance Engineers automate compliance and audit traceability.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 97,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Policy & Guardrails",
+    "question": "What is the hierarchical relationship between AI Policies, Procedures, and Technical Guardrails?",
+    "answer": "\u2022 Policy: High-level executive rules setting boundaries and risk thresholds (what is allowed/disallowed).\n\u2022 Procedures: Step-by-step, auditable operational workflows detailing how policies are executed.\n\u2022 Technical Guardrails: Automated, programmatic runtime/pipeline controls enforcing policies (e.g., regex DLP filters, IAM least privilege).",
+    "examTip": "Policy = What; Procedure = How (workflow); Guardrail = Enforcement (automated programmatic control).",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 98,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Governance Components",
+    "question": "What is a Model Registry and what critical governance artifacts does it track?",
+    "answer": "A centralized, immutable single source of truth for tracking:\n\u2022 Binary model weights and versions\n\u2022 Training dataset lineage and provenance\n\u2022 Hyperparameter configurations and evaluation metrics\n\u2022 Deployment lifecycle stages (dev/staging/production)\n\u2022 Cryptographic hashes and digital signatures for supply chain integrity.",
+    "examTip": "Model Registry provides immutable provenance and artifact versioning across the entire AI lifecycle.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 99,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Human Oversight",
+    "question": "What is the critical exam distinction between Human-in-the-Loop (HITL) and Human-on-the-Loop (HOTL)?",
+    "answer": "\u2022 Human-in-the-Loop (HITL): AI proposes decisions or outputs, but a human MUST review and authorize every action before execution (e.g., clinical diagnoses, high-value loans).\n\u2022 Human-on-the-Loop (HOTL): AI executes actions autonomously in real time, while a human monitors telemetry and retains emergency override/abort capability (e.g., algorithmic trading, autonomous driving).",
+    "examTip": "HITL requires human sign-off before execution; HOTL executes autonomously while a human monitors with kill-switch override.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 100,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "EU AI Act",
+    "question": "How does the EU AI Act categorize AI systems across its 4 risk tiers?",
+    "answer": "1. Unacceptable Risk: Banned outright (social scoring, public real-time biometric ID, cognitive manipulation).\n2. High Risk: Strict conformity assessments, logging, human oversight, cybersecurity (critical infrastructure, employment, credit scoring, healthcare).\n3. Limited Risk: Transparency obligations (chatbots, synthetic media watermarking).\n4. Minimal/Low Risk: Unregulated / voluntary best practices (video games, spam filters).",
+    "examTip": "Unacceptable = Banned; High = Strict CE conformity/logging; Limited = Transparency/watermarking; Minimal = Unregulated.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 101,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "International Standards",
+    "question": "Differentiate ISO/IEC 42001, ISO/IEC 23894, and ISO/IEC 22989.",
+    "answer": "\u2022 ISO/IEC 42001:2023: Certifiable AI Management System (AIMS) standard (equivalent to ISO 27001 for AI).\n\u2022 ISO/IEC 23894:2023: Specialized guidance for AI Risk Management (extends ISO 31000).\n\u2022 ISO/IEC 22989:2022: Establishes standardized terminology, definitions, and foundational concepts for AI.",
+    "examTip": "ISO 42001 is the certifiable AIMS standard; ISO 23894 is AI risk management; ISO 22989 is terminology.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 102,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "NIST AI RMF",
+    "question": "What are the four core functions of the NIST AI Risk Management Framework (AI RMF 1.0)?",
+    "answer": "1. GOVERN: Cross-cutting organizational structures, culture, policies, and risk tolerance.\n2. MAP: Contextual categorization, identifying risks, and framing model impact.\n3. MEASURE: Quantitative and qualitative evaluation, testing, and tracking of risks.\n4. MANAGE: Prioritizing, responding to, mitigating, and recovering from risk events.",
+    "examTip": "Remember GOVERN, MAP, MEASURE, and MANAGE. GOVERN is foundational and informs all other three.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 103,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Shadow AI",
+    "question": "What is Shadow AI, what risks does it pose, and how is it technically mitigated?",
+    "answer": "\u2022 Definition: Use of unsanctioned AI tools (consumer LLMs, rogue browser extensions, unvetted API keys) without enterprise CoE/IT approval.\n\u2022 Risks: Data leakage of PII/source code, regulatory violations, IP loss, untracked supply chain.\n\u2022 Technical Controls: Cloud Access Security Brokers (CASB), Secure Web Gateways (SWG) domain blocking, egress DLP regex inspection, and providing sanctioned enterprise alternatives.",
+    "examTip": "Mitigate Shadow AI via CASB/SWG domain blocks, egress DLP, and sanctioned enterprise tools with Zero Data Retention.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 104,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Deployment Architectures",
+    "question": "Compare public multi-tenant SaaS LLM deployment with dedicated private VPC deployment.",
+    "answer": "\u2022 Public Multi-Tenant SaaS: Shared compute, vendor key management, public egress, potential data retention/logging, pay-per-token pricing.\n\u2022 Dedicated Private VPC: Isolated single-tenant compute, Customer-Managed Keys (CMEK/BYOK), Zero Data Retention (ZDR) guarantee, private network routing (AWS PrivateLink/Azure Private Endpoint), deterministic latency.",
+    "examTip": "Private VPC with CMEK and Zero Data Retention is required for sensitive PII/Confidential data tiers.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 105,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Quick Check",
+    "question": "[Quick Check] Which AI CoE model balances enterprise-wide governance and standardized toolchains with business agility?",
+    "answer": "Hybrid AI CoE Model. A central hub establishes overarching policies and security baselines, while embedded squads build within business units.",
+    "examTip": "Hybrid balances enterprise governance with business agility.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 106,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Quick Check",
+    "question": "[Quick Check] Which technical role builds automated CI/CD/CT pipelines and manages Model Registries?",
+    "answer": "MLOps Engineer. They manage model lifecycle automation, registries, rollouts/rollbacks, and drift telemetry.",
+    "examTip": "MLOps Engineer = CI/CD/CT automation + Model Registry + drift tracking.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 107,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Quick Check",
+    "question": "[Quick Check] Under the EU AI Act, what classification applies to cognitive behavioral manipulation harming individuals?",
+    "answer": "Unacceptable Risk. Such systems are banned outright under EU law.",
+    "examTip": "Behavioral manipulation and social scoring = Unacceptable Risk (banned).",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 108,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Quick Check",
+    "question": "[Quick Check] An AI approves loans autonomously while a human supervisor monitors telemetry with override capability. Which oversight model is this?",
+    "answer": "Human-on-the-Loop (HOTL). The AI makes autonomous decisions in real time; the human supervises and retains kill-switch override authority.",
+    "examTip": "Autonomous action with passive supervision and override = Human-on-the-Loop.",
+    "isExamTip": true,
+    "isQuickCheck": true
+  },
+  {
+    "id": 109,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Quick Check",
+    "question": "[Quick Check] Which international standard serves as the certifiable AI Management System (AIMS)?",
+    "answer": "ISO/IEC 42001:2023. It provides certifiable requirements for enterprise AI management systems.",
+    "examTip": "ISO/IEC 42001 is the certifiable AIMS standard.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 110,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Quick Check",
+    "question": "[Quick Check] What are the four core functions of the NIST AI Risk Management Framework?",
+    "answer": "GOVERN, MAP, MEASURE, and MANAGE.",
+    "examTip": "NIST AI RMF = GOVERN, MAP, MEASURE, MANAGE.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 111,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Quick Check",
+    "question": "[Quick Check] What network security controls most effectively prevent sensitive source code egress into Shadow AI tools?",
+    "answer": "Cloud Access Security Broker (CASB) and Secure Web Gateway (SWG) with Data Loss Prevention (DLP) inspection.",
+    "examTip": "CASB + SWG + DLP blocks unsanctioned AI tools and data leaks.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 112,
+    "chapter": 6,
+    "chapterTitle": "AI GRC & Frameworks",
+    "category": "Quick Check",
+    "question": "[Quick Check] What compliance obligation is mandated for 'Limited Risk' AI systems under the EU AI Act?",
+    "answer": "Transparency obligations: users must be informed they are interacting with AI, and synthetic media must be watermarked and labeled.",
+    "examTip": "Limited Risk under EU AI Act = Transparency and labeling/watermarking obligations.",
+    "isExamTip": false,
+    "isQuickCheck": true
   }
 ];
 
@@ -2259,6 +2491,9 @@
           break;
         case "Digit5":
           document.querySelector('.pill-btn[data-chapter="5"]').click();
+          break;
+        case "Digit6":
+          document.querySelector('.pill-btn[data-chapter="6"]').click();
           break;
       }
     });
