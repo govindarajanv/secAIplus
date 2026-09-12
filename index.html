@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CompTIA SecAI+ (CY0-001) Exam Cram Flashcards</title>
+  <meta name="description" content="Comprehensive interactive exam cram flashcards for CompTIA SecAI+ (CY0-001) covering Chapters 1 to 4 with exam tips, quick checks, and progress tracking." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #0b0f19;
+      --bg-surface: #111827;
+      --bg-card: #1f2937;
+      --bg-card-back: #1e2638;
+      --border-color: #374151;
+      --text-primary: #f9fafb;
+      --text-secondary: #9ca3af;
+      --text-muted: #6b7280;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --primary-light: rgba(59, 130, 246, 0.15);
+      --success: #10b981;
+      --success-light: rgba(16, 185, 129, 0.15);
+      --warning: #f59e0b;
+      --warning-light: rgba(245, 158, 11, 0.15);
+      --danger: #ef4444;
+      --danger-light: rgba(239, 68, 68, 0.15);
+      --accent: #8b5cf6;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+      --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.25);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    [data-theme="light"] {
+      --bg-base: #f3f4f6;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-back: #f8fafc;
+      --border-color: #e5e7eb;
+      --text-primary: #111827;
+      --text-secondary: #4b5563;
+      --text-muted: #9ca3af;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: rgba(37, 99, 235, 0.1);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+      --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.08);
+      --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .badge-secai {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+
+    .brand h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-icon {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-icon:hover {
+      color: var(--text-primary);
+      border-color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    .main-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+      flex: 1;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Controls Bar */
+    .controls-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .chapter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill-btn {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .pill-btn:hover {
+      border-color: var(--primary);
+      color: var(--text-primary);
+    }
+
+    .pill-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.35);
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.5rem 1rem 0.5rem 2.25rem;
+      border-radius: var(--radius-md);
+      font-size: 0.875rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+
+    .filter-tags {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .tag-btn {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .tag-btn:hover, .tag-btn.active {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Progress Stats */
+    .progress-section {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .progress-counts {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+
+    .count-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .dot-mastered { background: var(--success); }
+    .dot-review { background: var(--warning); }
+    .dot-total { background: var(--primary); }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: var(--bg-card);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      display: flex;
+    }
+
+    .progress-bar-fill-mastered {
+      height: 100%;
+      background: var(--success);
+      transition: width 0.3s ease;
+    }
+
+    .progress-bar-fill-review {
+      height: 100%;
+      background: var(--warning);
+      transition: width 0.3s ease;
+    }
+
+    /* 3D Flashcard Container */
+    .flashcard-area {
+      perspective: 1400px;
+      margin: 1rem auto;
+      width: 100%;
+      max-width: 740px;
+      min-height: 400px;
+    }
+
+    .flashcard {
+      width: 100%;
+      min-height: 400px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-lg);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card-face:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .card-front {
+      background: linear-gradient(145deg, var(--bg-surface), var(--bg-card));
+    }
+
+    .card-back {
+      background: linear-gradient(145deg, var(--bg-card-back), var(--bg-surface));
+      transform: rotateY(180deg);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      padding-bottom: 1rem;
+    }
+
+    .card-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .badge-chapter {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-category {
+      background: rgba(139, 92, 246, 0.15);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .badge-exam-tip {
+      background: var(--warning-light);
+      color: var(--warning);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .bookmark-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.25rem;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bookmark-btn:hover, .bookmark-btn.active {
+      color: #f59e0b;
+      transform: scale(1.15);
+    }
+
+    .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.5rem 0;
+    }
+
+    .question-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .answer-text {
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      line-height: 1.65;
+      white-space: pre-line;
+    }
+
+    .exam-tip-box {
+      margin-top: 1.25rem;
+      background: var(--warning-light);
+      border-left: 4px solid var(--warning);
+      padding: 0.75rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+    }
+
+    .exam-tip-title {
+      font-weight: 700;
+      color: var(--warning);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding-top: 1rem;
+    }
+
+    .flip-hint {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 500;
+    }
+
+    .kbd-shortcut {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 0.1rem 0.35rem;
+      font-size: 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-secondary);
+    }
+
+    .mastery-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .btn-mastery {
+      border: 1px solid transparent;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-md);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-review {
+      background: var(--warning-light);
+      color: var(--warning);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .btn-review:hover, .btn-review.active {
+      background: var(--warning);
+      color: #000;
+    }
+
+    .btn-master {
+      background: var(--success-light);
+      color: var(--success);
+      border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-master:hover, .btn-master.active {
+      background: var(--success);
+      color: #fff;
+    }
+
+    /* Deck Navigation Bar */
+    .deck-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+    }
+
+    .btn-nav {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.65rem 1.4rem;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-nav:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-nav:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .card-counter {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Grid / List Mode */
+    .grid-view-container {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .grid-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+
+    .grid-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .grid-card-q {
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: var(--text-primary);
+    }
+
+    .grid-card-a {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      border-top: 1px solid var(--border-color);
+      padding-top: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .grid-card-tip {
+      background: var(--warning-light);
+      border-left: 3px solid var(--warning);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    /* Empty state */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+    }
+
+    .empty-state h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-color);
+      padding: 1.25rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .nav-container { padding: 0.75rem 1rem; }
+      .brand h1 { font-size: 1rem; }
+      .card-face { padding: 1.5rem 1.25rem 1.25rem; min-height: 420px; }
+      .question-title { font-size: 1.15rem; }
+      .answer-text { font-size: 0.95rem; }
+      .controls-panel { padding: 1rem; }
+      .deck-nav { gap: 0.75rem; }
+      .btn-nav { padding: 0.55rem 1rem; font-size: 0.85rem; }
+      .kbd-shortcut { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="badge-secai">CY0-001</span>
+        <h1>SecAI+ <span>Exam Cram</span> Flashcards</h1>
+      </a>
+      <div class="header-actions">
+        <button id="viewToggleBtn" class="btn-icon" title="Toggle Grid / Deck Mode">🗂️</button>
+        <button id="shuffleBtn" class="btn-icon" title="Shuffle Deck (S)">🔀</button>
+        <button id="resetProgressBtn" class="btn-icon" title="Reset Study Progress">🔄</button>
+        <button id="themeToggleBtn" class="btn-icon" title="Toggle Light/Dark Theme">🌓</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+
+    <!-- Controls & Filters -->
+    <div class="controls-panel">
+      <!-- Chapter Pills -->
+      <div class="chapter-pills" id="chapterPills">
+        <button class="pill-btn active" data-chapter="all">All Chapters (73)</button>
+        <button class="pill-btn" data-chapter="1">Ch 1: AI & Data Concepts (17%)</button>
+        <button class="pill-btn" data-chapter="2">Ch 2: Threat Modeling & Security (~40%)</button>
+        <button class="pill-btn" data-chapter="3">Ch 3: Access Controls for AI</button>
+        <button class="pill-btn" data-chapter="4">Ch 4: Threats & Controls</button>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search keywords (e.g., DP-SGD, RAG, Inversion, BLEU)..." />
+        </div>
+        <div class="filter-tags">
+          <button class="tag-btn" id="filterExamTips">⚡ Exam Tips</button>
+          <button class="tag-btn" id="filterQuickCheck">❓ Quick Check</button>
+          <button class="tag-btn" id="filterReview">⚠️ Needs Review</button>
+          <button class="tag-btn" id="filterBookmarked">⭐ Starred</button>
+        </div>
+      </div>
+
+      <!-- Progress Section -->
+      <div class="progress-section">
+        <div class="progress-meta">
+          <span>Overall Mastery Progress</span>
+          <div class="progress-counts">
+            <span class="count-badge"><span class="dot dot-mastered"></span> <span id="countMastered">0</span> Mastered</span>
+            <span class="count-badge"><span class="dot dot-review"></span> <span id="countReview">0</span> Review</span>
+            <span class="count-badge"><span class="dot dot-total"></span> <span id="countTotal">73</span> Total</span>
+          </div>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill-mastered" id="progressBarMastered" style="width: 0%"></div>
+          <div class="progress-bar-fill-review" id="progressBarReview" style="width: 0%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive 3D Flashcard Deck Mode -->
+    <div id="deckView">
+      <div class="flashcard-area" id="flashcardArea">
+        <div class="flashcard" id="flashcard">
+          
+          <!-- Front Face -->
+          <div class="card-face card-front">
+            <div class="card-header">
+              <div class="card-badges">
+                <span class="badge-chapter" id="frontChapter">Chapter 1</span>
+                <span class="badge-category" id="frontCategory">Core AI</span>
+                <span class="badge-exam-tip" id="frontTipBadge" style="display:none">⚡ Exam Tip</span>
+              </div>
+              <button class="bookmark-btn" id="bookmarkBtn" title="Bookmark card">★</button>
+            </div>
+            
+            <div class="card-body">
+              <h2 class="question-title" id="frontQuestion">Loading Question...</h2>
+            </div>
+            
+            <div class="card-footer">
+              <div class="flip-hint">
+                <span>Click card or press <span class="kbd-shortcut">Space</span> to reveal answer</span>
+              </div>
+              <div class="card-counter" id="cardCounter">1 / 73</div>
+            </div>
+          </div>
+
+          <!-- Back Face -->
+          <div class="card-face card-back">
+            <div class="card-header">
+              <div class="card-badges">
+                <span class="badge-chapter" id="backChapter">Chapter 1</span>
+                <span class="badge-category" id="backCategory">Answer</span>
+              </div>
+              <div class="mastery-buttons" onclick="event.stopPropagation()">
+                <button class="btn-mastery btn-review" id="btnMarkReview" title="Mark for review (R)">⚠️ Review</button>
+                <button class="btn-mastery btn-master" id="btnMarkMastered" title="Mark as mastered (M)">✓ Mastered</button>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <div class="answer-text" id="backAnswer">Loading Answer...</div>
+              <div class="exam-tip-box" id="backExamTip" style="display:none">
+                <div class="exam-tip-title">⚡ High-Yield Exam Tip</div>
+                <div id="backExamTipText"></div>
+              </div>
+            </div>
+            
+            <div class="card-footer">
+              <div class="flip-hint">
+                <span>Click card or press <span class="kbd-shortcut">Space</span> to flip back</span>
+              </div>
+              <div class="card-counter" id="backCounter">1 / 73</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Deck Navigation -->
+      <div class="deck-nav">
+        <button id="prevBtn" class="btn-nav" title="Previous card (Left Arrow / K)">← Previous</button>
+        <div class="card-counter" id="navCounter">1 of 73</div>
+        <button id="nextBtn" class="btn-nav" title="Next card (Right Arrow / J)">Next →</button>
+      </div>
+    </div>
+
+    <!-- Grid / List View Mode -->
+    <div class="grid-view-container" id="gridView">
+      <!-- Injected via JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState">
+      <h3>No flashcards match your filter</h3>
+      <p>Try changing chapter selection, clearing the search query, or resetting tags.</p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    CompTIA SecAI+ (CY0-001) Exam Cram Flashcards | Built for rapid revision across Chapters 1-4 | Keyboard: Space (Flip), ← / → (Prev/Next), M (Master), R (Review)
+  </footer>
+
+  <script>
+    const CARDS_DATA = [
+  {
+    "id": 1,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Core AI Concepts",
+    "question": "What is Machine Learning (ML), and how does it differ from traditional AI?",
+    "answer": "Machine Learning teaches computers to learn from data, identify patterns, and make decisions with minimal human intervention. Unlike traditional AI that relies on explicitly programmed static rules, ML systems automatically improve their performance through exposure to training data.",
+    "examTip": "ML systems improve automatically via data exposure rather than hardcoded rules.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 2,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Core AI Concepts",
+    "question": "How does Deep Learning detect threats differently than traditional Intrusion Detection Systems (IDS)?",
+    "answer": "Traditional IDS detects **known** attacks using pre-configured signatures and heuristics. Deep Learning uses multi-layered neural networks trained on historical data to learn complex patterns and detect **novel, previously unseen, or evolving threats**.",
+    "examTip": "Deep learning detects NOVEL/complex threats from learned patterns; traditional IDS detects KNOWN attacks via signatures/heuristics. Deep learning complements IDS.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 3,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Core AI Concepts",
+    "question": "What are Transformers and how are they used in cybersecurity?",
+    "answer": "Transformers are neural network architectures that process sequential data by modeling contextual relationships between elements (words, events). In cybersecurity, they excel at analyzing security-related text (phishing emails, threat intelligence reports) and tracking sequences of user behavior in UEBA to detect insider threats or compromised accounts.",
+    "examTip": "Transformers process sequences by modeling contextual relationships; critical for UEBA and threat text analysis.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 4,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Specialized Models",
+    "question": "What are Generative Adversarial Networks (GANs) and how are they applied defensively?",
+    "answer": "GANs consist of two competing neural networks: a **generator** (creates synthetic data) and a **discriminator** (distinguishes real from fake). Defensively, GANs generate synthetic realistic threat scenarios, synthetic logs for IDS training, and malware variants to test defenses during red-team exercises.",
+    "examTip": "GANs = Generator vs Discriminator competing. Key cybersecurity use: generating synthetic training logs and realistic red-team threat simulations.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 5,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Specialized Models",
+    "question": "Compare Large Language Models (LLMs) and Small Language Models (SLMs) in security operations.",
+    "answer": "\u2022 **LLMs** (e.g., GPT): Billions of parameters, vast knowledge; used for summarizing threat intelligence, drafting playbooks, and conversational assistants.\n\u2022 **SLMs**: Few million to low-billion parameters; lightweight and fast; run on modest CPUs/appliances for real-time edge log monitoring and alert triage.",
+    "examTip": "SLMs have modest hardware requirements and run on everyday CPUs, making them ideal for real-time network appliance monitoring.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 6,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Model Training",
+    "question": "What are the key differences between Supervised and Unsupervised Learning?",
+    "answer": "\u2022 **Supervised Learning**: Trains on **labeled data** (input-output pairs). High precision and auditability; excels at detecting known threat patterns, but struggles with zero-day attacks.\n\u2022 **Unsupervised Learning**: Trains on **unlabeled data** to uncover clusters/outliers. Scalable and flexible; excels at spotting novel tactics, zero-days, insider threats, and anomaly detection.",
+    "examTip": "Supervised learning requires LABELED data (precision/auditability); Unsupervised learning requires UNLABELED data (scalability/zero-day anomaly detection).",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 7,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Anomaly Detection",
+    "question": "How does an Isolation Forest detect anomalies in high-dimensional security data?",
+    "answer": "Isolation Forest randomly partitions (cuts) the data space. Because anomalies are few and attribute-different, they are isolated in very few cuts. Normal instances require many more cuts to isolate. Few cuts = marked as outlier/anomaly.",
+    "examTip": "Isolation Forest cuts data space randomly: few cuts = outlier.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 8,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Anomaly Detection",
+    "question": "How do Autoencoders identify anomalies in security event logs?",
+    "answer": "Autoencoders are neural networks trained to compress and reconstruct normal records. When presented with a novel or malicious log event, the network fails to reconstruct it accurately. A **high reconstruction error** indicates an anomaly.",
+    "examTip": "In autoencoders, high reconstruction error = anomalous event.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 9,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Model Training",
+    "question": "What are the three core components of Reinforcement Learning (RL), and what makes it unique?",
+    "answer": "1. **State**: Environment snapshot (packet headers, alert levels, firewall states).\n2. **Action**: Defensive responses (allow, drop, throttle, isolate host).\n3. **Reward**: Scoring (+10 blocked malware, -3 false positive, -1 latency).\n**Unique aspect:** Where supervised and unsupervised learning stop at detection, RL extends capabilities into **active automated response**.",
+    "examTip": "Supervised and unsupervised models detect; Reinforcement Learning extends to automated RESPONSE.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 10,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Model Training",
+    "question": "What are the three phases of Reinforcement Learning deployment in defensive security?",
+    "answer": "1. **Training Phase**: Thousands of state\u2192action\u2192reward iterations in a simulated replay environment until rewards level off.\n2. **Shadow Mode**: Policy runs alongside human analysts, providing recommendations without enforcing actions.\n3. **Autonomous Mode**: Policy enforces actions independently once side-by-side performance matches or exceeds human analysts, logging all decisions.",
+    "examTip": "Shadow mode = recommendations alongside humans (no enforcement); Autonomous mode = active automated execution with audit logging.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 11,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Model Training",
+    "question": "What is Federated Learning, and what two privacy mechanisms protect it?",
+    "answer": "Federated Learning trains models across decentralized edge devices without centralizing raw data.\n\u2022 **Secure Aggregation**: Encrypts device parameter updates; central server only decrypts combined averages, never inspecting individual device data.\n\u2022 **Differential Privacy**: Injects calibrated mathematical noise to device updates to obscure individual user contributions.",
+    "examTip": "Federated Learning challenges include device heterogeneity and model drift. Privacy is enforced via Secure Aggregation + Differential Privacy.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 12,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Model Optimization",
+    "question": "Differentiate between Model Pruning and Quantization.",
+    "answer": "\u2022 **Pruning**: Removes unimportant neural network weights that contribute negligibly to performance, decreasing model footprint.\n\u2022 **Quantization**: Converts numerical representations from high precision (e.g., 32-bit floating point) to lower precision (e.g., 8-bit integers), saving memory and accelerating inference.",
+    "examTip": "Pruning removes weights; Quantization reduces numerical precision (e.g., float32 to int8).",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 13,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Model Validation",
+    "question": "Distinguish between Overfitting and Concept Drift.",
+    "answer": "\u2022 **Overfitting**: Occurs during training when a model memorizes its training data and noise, failing to generalize to unseen test data.\n\u2022 **Concept Drift**: Occurs in production over time when the underlying real-world data patterns change (e.g., adversaries adopting novel evasive keywords or tactics).",
+    "examTip": "Overfitting is a training failure (memorization); Concept Drift is an operational degradation over time due to evolving external patterns.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 14,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Prompt Engineering",
+    "question": "What are the three prompt types based on provided examples (Zero-shot, One-shot, Multi-shot)?",
+    "answer": "\u2022 **Zero-shot**: Only instructions/query provided; no prior examples included.\n\u2022 **One-shot**: Exactly one input-output demonstration example provided before query.\n\u2022 **Multi-shot**: Multiple demonstration input-output pairs provided to establish expected patterns.",
+    "examTip": "Zero-shot = 0 examples; One-shot = 1 example; Multi-shot = 2+ examples in prompt context.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 15,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Prompt Engineering",
+    "question": "What is the relationship between the System Prompt and User Prompt?",
+    "answer": "\u2022 **System Prompt**: Sets the outer guardrails, operational boundary rules, persona, and security policies (e.g., 'Reject shell commands unless admin').\n\u2022 **User Prompt**: The steering wheel directing the model toward an analytical task, blending context, perspective, and desired output format.",
+    "examTip": "System prompt = guardrails (boundaries). User prompt = steering wheel (direction).",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 16,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Data Security",
+    "question": "Why is Structured Data critical for security analytics compared to Unstructured Data?",
+    "answer": "Structured data (e.g., NetFlow, firewall logs, IOC tables) has predictable, schema-compliant fields. This enables SIEM and SOAR systems to ingest data without brittle custom regex parsers, automate threat intelligence enrichment, calculate risk scores, and trigger automated playbooks.",
+    "examTip": "Structured data enables predictable SIEM/SOAR ingestion, rule-based triage, and automated playbook execution.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 17,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Data Security",
+    "question": "What is Retrieval-Augmented Generation (RAG) and what are its key security protections?",
+    "answer": "RAG enables an LLM to query external document vector stores (embeddings) to ground its responses without retraining the foundation model.\n**Key Protections:**\n1. Vector database encryption\n2. Multi-tenant isolation (prevents cross-tenant document leakage)\n3. Input/document sanitization to prevent indirect prompt injection.",
+    "examTip": "RAG requires NO model retraining; fresh knowledge is added via vector embeddings.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 18,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Data Handling",
+    "question": "Differentiate Data Lineage from Data Provenance.",
+    "answer": "\u2022 **Data Lineage**: Tracks and records every transformation, pipeline step, and movement a dataset undergoes throughout its lifecycle.\n\u2022 **Data Provenance**: Documents the originating source, ownership, licensing terms, and consent agreements of the data.",
+    "examTip": "Lineage = processing lifecycle history; Provenance = originating source and legal consent.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 19,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Data Handling",
+    "question": "How does Data Verification prevent data-poisoning attacks?",
+    "answer": "Data verification calculates cryptographic hashes (e.g., SHA-256) of approved raw datasets and stores them in secure, read-only locations. Automated pipelines recalculate hashes upon ingestion; any altered or injected sample causes a hash mismatch and fails the build.",
+    "examTip": "Cryptographic hashes (SHA-256) provide data verification to detect unauthorized training dataset tampering.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 20,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Data Security",
+    "question": "Differentiate Output Watermarking from Model Watermarking.",
+    "answer": "\u2022 **Output Watermarking**: Embeds invisible identifiers into model-generated media (text, images, synthetic logs) for source verification and copyright validation.\n\u2022 **Model Watermarking**: Embeds unique probe inputs that trigger predictable output signatures to prove model ownership and detect unauthorized duplication/cloning.",
+    "examTip": "Output watermarking validates content origin; Model watermarking protects model intellectual property against cloning.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 21,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Quick Check",
+    "question": "[Quick Check] What is the feedback loop in unsupervised anomaly detection?",
+    "answer": "An unsupervised model detects an anomaly \u2192 security analyst inspects, verifies, and labels it \u2192 verified record is added to historical training set \u2192 supervised models learn pattern \u2192 overall detection accuracy steadily improves.",
+    "examTip": "Unsupervised anomalies become verified training labels for supervised models.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 22,
+    "chapter": 1,
+    "chapterTitle": "AI & Data Concepts",
+    "category": "Quick Check",
+    "question": "[Quick Check] What is K-fold cross-validation and why is it used?",
+    "answer": "Data is divided into k equal subsets (folds). The model is trained k times, holding out a different fold each time for testing. The average score across all k runs produces an evaluation metric resistant to lucky or unlucky data splits.",
+    "examTip": "K-fold cross validation reduces dependence on arbitrary train/test partition splits.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 23,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Threat Intelligence",
+    "question": "What is the MIT AI Risk Repository and what are its two classification taxonomies?",
+    "answer": "The MIT AI Risk Repository contains 1,600+ AI risks synthesized from 65 frameworks.\n\u2022 **Causal Taxonomy**: Classifies risks based on cause (human intent vs AI malfunction vs external factor).\n\u2022 **Domain Taxonomy**: Groups risks into 7 overarching domains and 23 subdomains.",
+    "examTip": "MIT AI Risk Repository has 7 domains and 23 subdomains.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 24,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Threat Intelligence",
+    "question": "List the 7 Domains of the MIT AI Risk Repository.",
+    "answer": "1. Discrimination & Toxicity\n2. Privacy & Security\n3. Misinformation\n4. Malicious Actors & Misuse\n5. Human-Computer Interaction\n6. Socioeconomic & Environmental\n7. AI System Safety, Failures, & Limitations.",
+    "examTip": "Know these 7 domains for risk categorization questions on the exam.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 25,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Threat Resources",
+    "question": "Compare AVID, AIID, and arXiv as AI threat resources.",
+    "answer": "\u2022 **AVID (AI Vulnerability Database)**: Structured open-source catalog of AI failure modes, model vulnerabilities, and mitigations.\n\u2022 **AIID (AI Incident Database)**: Real-time repository of real-world AI incidents, failures, biases, and deepfakes.\n\u2022 **arXiv**: Open-access scientific preprint platform for latest AI security research.",
+    "examTip": "AVID = vulnerability database; AIID = incident database; arXiv = academic research papers.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 26,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Vulnerability Mapping",
+    "question": "Which Common Weakness Enumerations (CWEs) map to Prompt Injection and System Prompt Leakage?",
+    "answer": "\u2022 **CWE-77 (Command Injection)**: Maps to Prompt Injection where user-supplied prompt text overrides system commands.\n\u2022 **CWE-200 (Exposure of Sensitive Information)**: Maps to System Prompt Leakage and Model Inversion.",
+    "examTip": "Prompt injection = CWE-77; System prompt / training data leakage = CWE-200.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 27,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "OWASP LLM Top 10",
+    "question": "What is 'Excessive Agency' in the OWASP LLM Top 10?",
+    "answer": "Excessive Agency occurs when an LLM is granted broad system permissions, excessive tool access, or unconstrained autonomy. A malicious prompt injection or reasoning error can then trigger destructive unauthorized actions (e.g., deleting database records or sending unauthorized emails).",
+    "examTip": "Excessive Agency is mitigated by least privilege, Human-in-the-Loop approval, and narrow tool scopes.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 28,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "OWASP LLM Top 10",
+    "question": "What is Insecure Output Handling in LLM applications?",
+    "answer": "Insecure Output Handling occurs when downstream systems (web apps, admin consoles, terminals) execute LLM-generated output without sanitization. If an LLM returns malicious HTML/JavaScript or shell commands, it can lead to XSS, SSRF, or Remote Code Execution (RCE).",
+    "examTip": "Always treat LLM output as untrusted user input before passing it to downstream interpreters.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 29,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Adversarial Frameworks",
+    "question": "What is MITRE ATLAS and what are its key adversarial goals?",
+    "answer": "MITRE ATLAS (Adversarial Threat Landscape for Artificial-Intelligence Systems) is a globally accessible knowledge base of adversary tactics, techniques, and procedures (TTPs) targeting AI/ML. It categorizes goals across the CIA triad: **Availability**, **Integrity**, and **Confidentiality**.",
+    "examTip": "MITRE ATLAS maps attacks across all phases of the ML pipeline against availability, integrity, and confidentiality goals.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 30,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Frameworks",
+    "question": "What are the four core functions of the NIST AI Risk Management Framework (AI RMF)?",
+    "answer": "1. **Map**: Contextualize AI risks and identify boundaries.\n2. **Measure**: Quantify and evaluate risks with metrics.\n3. **Manage**: Implement controls to mitigate, transfer, or avoid risks.\n4. **Govern**: Cultivate organizational culture and oversight policies.",
+    "examTip": "NIST AI RMF Core Functions: MAP, MEASURE, MANAGE, GOVERN.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 31,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Threat Modeling Methods",
+    "question": "Compare STRIDE, DREAD, and MAESTRO in AI Threat Modeling.",
+    "answer": "\u2022 **STRIDE**: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege.\n\u2022 **DREAD**: Risk scoring based on Damage, Reproducibility, Exploitability, Affected Users, Discoverability.\n\u2022 **MAESTRO**: Comprehensive threat modeling framework specifically tailored for AI/ML systems.",
+    "examTip": "STRIDE categorizes threat types; DREAD scores risk severity; MAESTRO models AI-specific threats.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 32,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Model Controls",
+    "question": "How does security evaluation differ across On-Premise, Pre-Trained, and Vendor-Provided models?",
+    "answer": "\u2022 **On-Premise**: Full control; focus on in-depth data lineage, training pipeline code, and infrastructure controls.\n\u2022 **Pre-Trained (Open-Source)**: Evaluate training data integrity, embedded bias, and backdoor risks.\n\u2022 **Vendor-Provided (SaaS)**: Audit third-party attestations (SOC 2, ISO certifications, pentest reports, SLAs).",
+    "examTip": "Vendor models require third-party audit reports (SOC 2 / ISO); pre-trained models require data integrity and bias audits.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 33,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Guardrails vs Firewalls",
+    "question": "What is the operational difference between a Model Guardrail and a Prompt Firewall?",
+    "answer": "\u2022 **Model Guardrail**: Code-based logic checks, safety policies, or external validators enforcing constraints at input, output, or context layers.\n\u2022 **Prompt Firewall**: A dedicated security proxy layer within the AI Gateway that inspects, filters, and logs all incoming prompts and outgoing completions.",
+    "examTip": "Guardrails = code-based policy rules; Prompt Firewall = gateway-level security proxy intercepting traffic.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 34,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Guardrail Architecture",
+    "question": "What are the three layers of Model Guardrails?",
+    "answer": "1. **Input Layer**: Filters prompts before reaching the model (PII detection, jailbreak detection, injection patterns).\n2. **Output Layer**: Sanitizes model responses before returning to users (toxicity redaction, secret filtering).\n3. **Contextual Layer**: Evaluates conversation history and user session intent against authorized use cases.",
+    "examTip": "Three guardrail layers: Input (pre-model), Output (post-model), Contextual (session & intent).",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 35,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Gateway Controls",
+    "question": "Differentiate Rate Limits from Input Quotas in an AI Gateway.",
+    "answer": "\u2022 **Rate Limits**: Limit the number of requests within **short time windows** (e.g., 10 req/min) to prevent rapid-fire brute forcing, DoS, and prompt chaining.\n\u2022 **Input Quotas**: Cap total data volume or total requests over **longer periods** (daily, monthly in MB, GB, or tokens) to manage infrastructure bandwidth and budget.",
+    "examTip": "Rate limits = short-window request counts; Input quotas = long-window cumulative data volume/tokens.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 36,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Gateway Controls",
+    "question": "Why are Token Limits enforced at the user and application levels?",
+    "answer": "Oversized prompts can overload computational hardware, create latency spikes, hide malicious payload deep within padding, or drive massive unexpected bills in pay-per-token API environments (Denial-of-Wallet).",
+    "examTip": "Token limits defend against latency attacks, pay-per-token cost exhaustion, and concealed injection payloads.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 37,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Prompt Security",
+    "question": "How do Parameterized Prompt Templates prevent Prompt Injection?",
+    "answer": "Prompt templates enforce strict boundary separation by inserting raw user input into designated placeholders (e.g., `Answer: {{user_input}}`). The model interprets user text strictly as payload data in the user context, preventing it from executing as system-level instructions.",
+    "examTip": "Parameterized placeholders treat user input as content, not system commands.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 38,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Attack Vectors",
+    "question": "What is Indirect Prompt Injection and why is it especially dangerous?",
+    "answer": "Indirect prompt injection occurs when malicious instructions are embedded in external documents, websites, or emails that an LLM retrieves. It is more dangerous than direct injection because the attacker never interacts directly with the AI, making it invisible to standard user-facing input filters.",
+    "examTip": "Indirect injection plants malicious instructions in third-party content consumed by the LLM during retrieval.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 39,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Attack Vectors",
+    "question": "What is a Model Inversion attack?",
+    "answer": "A model inversion attack queries a model repeatedly to reconstruct or infer sensitive records from its training dataset by analyzing output probabilities and feature weights.",
+    "examTip": "Model Inversion reverse-engineers training data from model outputs.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 40,
+    "chapter": 2,
+    "chapterTitle": "Threat Modeling & Security",
+    "category": "Gateway Controls",
+    "question": "What are Scoped Virtual Keys and why are they used on AI Gateways?",
+    "answer": "Rather than exposing a single master API key, the gateway issues short-lived, scoped virtual keys tied to specific users, endpoints, and modalities. If compromised, impact is contained, and the key can be revoked immediately without breaking other services.",
+    "examTip": "Scoped virtual keys limit blast radius and enable granular audit trails.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 41,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Access Mechanisms",
+    "question": "Distinguish between Throttling, Content Filtering, and Context-Aware Controls.",
+    "answer": "\u2022 **Throttling**: Restricts request frequency per user/service to avoid DoS.\n\u2022 **Content Filtering**: Inspects payload content to block malicious or illegal data.\n\u2022 **Context-Aware Controls**: Dynamically modifies access permissions based on external factors (time of day, physical location, device posture).",
+    "examTip": "Throttling = frequency; Content Filtering = payload; Context-Aware = environmental conditions (time/location).",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 42,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Standards & Compliance",
+    "question": "Differentiate ISO/IEC 27001, ISO/IEC 42001, and ISO/IEC 23894.",
+    "answer": "\u2022 **ISO/IEC 27001**: Baseline for Information Security Management Systems (ISMS).\n\u2022 **ISO/IEC 42001**: Certifiable standard specifically for **Artificial Intelligence Management Systems (AIMS)**.\n\u2022 **ISO/IEC 23894**: Dedicated guidance specifically for **AI Risk Management**.",
+    "examTip": "ISO 27001 = ISMS; ISO 42001 = AI Management System (AIMS); ISO 23894 = AI Risk Management guidance.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 43,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Agent & Tool Controls",
+    "question": "Why are AI Agents and tools considered Privileged Execution Surfaces?",
+    "answer": "AI agents possess autonomous capabilities to invoke external APIs, write to databases, query networks, or send emails. If tricked via prompt injection or reasoning failures, their elevated privileges can be exploited to cause extensive enterprise harm.",
+    "examTip": "AI agents are privileged surfaces; protect with explicit allow-lists, short-lived secrets, NACLs, and Human-in-the-Loop.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 44,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Agent & Tool Controls",
+    "question": "What is the primary role of Human-in-the-Loop (HITL) in agent architectures?",
+    "answer": "HITL enforces mandatory human review, approval, or override before an AI agent can execute critical, high-impact, or irreversible actions (e.g., updating firewall rules, deleting databases, executing financial transactions).",
+    "examTip": "HITL is the primary countermeasure against Excessive Agency.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 45,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Cryptography",
+    "question": "What is Homomorphic Encryption (HE) and which data state does it protect?",
+    "answer": "Homomorphic Encryption allows mathematical operations and model inference directly on encrypted ciphertext without decrypting it first. It uniquely protects **data in use**.",
+    "examTip": "Homomorphic encryption protects DATA IN USE by computing directly on ciphertext.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 46,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Privacy Techniques",
+    "question": "How does Differentially Private SGD (DP-SGD) protect training data privacy?",
+    "answer": "1. Calculates gradients during backpropagation.\n2. **Clips** individual gradients to a maximum norm so no single training record dominates the model update.\n3. Adds calibrated **random noise** to the clipped gradients to prevent membership inference.\n**Trade-off:** Higher noise = greater privacy, but reduced model accuracy.",
+    "examTip": "DP-SGD clips gradients and adds noise. Trade-off: higher privacy = lower model accuracy.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 47,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Data Privacy",
+    "question": "Compare Static Data Masking and Dynamic Data Masking.",
+    "answer": "\u2022 **Static Data Masking**: Permanently replaces sensitive identifiers with realistic fictional data, creating a separate sanitized dataset for training and non-prod testing.\n\u2022 **Dynamic Data Masking**: Obscures sensitive data on-the-fly during read queries in production while leaving the underlying storage intact.",
+    "examTip": "Static masking = permanent new dataset copy; Dynamic masking = in-flight masking upon query.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 48,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Data Privacy",
+    "question": "What is the difference between Data Minimization and Data Redaction?",
+    "answer": "\u2022 **Data Minimization**: Restricting collection strictly to the bare minimum data needed to achieve the objective (**occurs before or during collection**).\n\u2022 **Data Redaction**: Obscuring or deleting sensitive or unnecessary fields from existing records (**occurs after collection**).",
+    "examTip": "TIMING DISTINCTION: Data Minimization occurs BEFORE/DURING collection; Data Redaction occurs AFTER collection.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 49,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Data Security",
+    "question": "What role does Data Loss Prevention (DLP) play in AI security, and what does it require?",
+    "answer": "DLP solutions (e.g., Microsoft Purview DLP, Trellix DLP) monitor and restrict sensitive data throughout its entire lifecycle. They rely on distinct **data classification labels** (e.g., Public, Confidential, Secret) to trigger automated protection rules.",
+    "examTip": "DLP requires distinct data classification and labeling to enforce policy controls.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 50,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Logging & Audit",
+    "question": "What security controls must be applied to AI system logs?",
+    "answer": "1. **Sanitization**: Scrub all PII/PHI before storage to avoid secondary compliance breaches.\n2. **Encryption**: Encrypt logs at rest and in transit.\n3. **Read-Only Permissions**: Prevent administrators from tampering with records.\n4. **Remote Logging**: Ship log streams off-site to preserve forensic integrity against host compromises.",
+    "examTip": "Log sanitization must occur BEFORE storage. Read-only permissions and remote logging guarantee log integrity.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 51,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Model KPIs",
+    "question": "Compare BLEU and ROUGE evaluation metrics.",
+    "answer": "\u2022 **BLEU**: Precision-oriented n-gram word overlap against reference texts; fast and simple, but ignores missing context and paraphrasing.\n\u2022 **ROUGE**: Recall-oriented content overlap; ideal for summarization tasks because it tolerates paraphrasing and semantic equivalents.",
+    "examTip": "BLEU = precision (word overlap); ROUGE = recall (summarization, tolerates paraphrasing).",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 52,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Model Monitoring",
+    "question": "What are Canary Prompts and how do they detect Model Drift?",
+    "answer": "Canary prompts are standardized, pre-formatted test queries sent through the model on a recurring schedule. Because expected outputs are known, any unexpected changes in safety, tone, or accuracy act as an automated tripwire alerting engineers to model drift.",
+    "examTip": "Canary prompts are automated tripwires used to continuously monitor for model drift and policy violations.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 53,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Hallucination Defense",
+    "question": "How do Grounding Checks prevent LLM hallucinations?",
+    "answer": "Grounding checks validate and link model outputs directly to trusted, authoritative reference data sources before output is rendered, ensuring statements are backed by verified evidence.",
+    "examTip": "Grounding checks tie output back to verified source facts to stop hallucinations.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 54,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Testing & Validation",
+    "question": "What is Counterfactual Testing in AI model evaluation?",
+    "answer": "Counterfactual testing alters specific input attributes (such as gender, age, or specific keywords) while keeping all other variables constant to observe if the model's prediction changes. It identifies bias and tests explainability.",
+    "examTip": "Counterfactual testing modifies specific inputs to detect bias and verify decision explainability.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 55,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Optimization",
+    "question": "What is Prompt Compression and what are its dual benefits?",
+    "answer": "Prompt compression simplifies and condenses prompt text while preserving semantic meaning. Dual benefits: **reduces token consumption costs** in metered environments and **speeds up inference latency**.",
+    "examTip": "Prompt compression reduces cost and latency while preserving context.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 56,
+    "chapter": 3,
+    "chapterTitle": "Access Controls",
+    "category": "Confidential Computing",
+    "question": "What is a Trusted Execution Environment (TEE)?",
+    "answer": "A TEE is a secure, isolated hardware enclave inside the CPU that protects sensitive code and data from being accessed or modified by unauthorized software, including the host operating system and hypervisor.",
+    "examTip": "TEE provides hardware-enforced confidential computing for sensitive model inference.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 57,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "AI Lifecycle Security",
+    "question": "What is the primary role of an AI Model Registry in security governance?",
+    "answer": "An AI Model Registry serves as the central auditable system of record tracking versions of models, training datasets, configurations, and evaluation metrics. It enforces change control, approval workflows, and rollback capabilities.",
+    "examTip": "Model Registry = auditable system of record for model versions, datasets, and change approvals.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 58,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Lifecycle Threat Mapping",
+    "question": "Map primary AI threats across the three lifecycle attack phases: Training, Inference, and Deployment.",
+    "answer": "\u2022 **Training Phase**: Data poisoning, model poisoning, backdoor injection, bias injection.\n\u2022 **Inference Phase**: Evasion attacks, input manipulation, prompt injection, jailbreaks.\n\u2022 **Deployment Phase**: Model theft, model inversion, membership inference, model DoS.",
+    "examTip": "Training = data/model integrity; Inference = evasion & prompt injection; Deployment = theft, privacy attacks, DoS.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 59,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Human Oversight",
+    "question": "Compare Human-in-the-Loop (HITL), Human Oversight, and Human Validation.",
+    "answer": "\u2022 **Human-in-the-Loop (HITL)**: Transactional gating of critical individual decisions before execution.\n\u2022 **Human Oversight**: Systemic monitoring of aggregate performance, fairness metrics, and emergency suspension authority.\n\u2022 **Human Validation**: Periodic expert sampling and adversarial testing against ground truth.",
+    "examTip": "HITL = individual transaction gatekeeper; Oversight = systemic dashboard monitoring; Validation = periodic ground-truth quality checks.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 60,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Attack Differentiators",
+    "question": "What is the fundamental difference between a Backdoor Attack and a Trojan Attack in AI?",
+    "answer": "\u2022 **Backdoor Attack**: Injected into training data; alters mathematical model **weights** so that an input trigger causes abnormal model behavior, but contains no hidden executable code.\n\u2022 **Trojan Attack**: Injected into the model artifact/container via the supply chain; contains **actual malicious code or files** executing unauthorized tasks in the background.",
+    "examTip": "Backdoor = poisoned training weights triggered by input patterns; Trojan = hidden malicious executable code embedded inside the model container.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 61,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Attack Differentiators",
+    "question": "How does Model Inversion differ from Membership Inference?",
+    "answer": "\u2022 **Model Inversion**: Reconstructs sensitive training data records from model outputs.\n\u2022 **Membership Inference**: Determines whether a specific known person's data record was included in the training set.",
+    "examTip": "Inversion reconstructs the training data; Membership Inference verifies if a specific record was present.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 62,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Compensating Controls",
+    "question": "How do Decoy or Honeypot Endpoints detect Model Theft?",
+    "answer": "Organizations deploy fake API endpoints or fake system prompts identical to legitimate services. Because genuine users never query them, automated web scraping or model-cloning bots hitting these endpoints immediately trigger high-confidence alerts.",
+    "examTip": "Decoy endpoints detect automated scraping and model theft because legitimate clients never access them.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 63,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Supply Chain Security",
+    "question": "What is a Transfer Learning Attack, and why is it difficult to detect?",
+    "answer": "An attacker introduces backdoors or biases into a publicly distributed base model. When an organization fine-tunes this foundation model on its clean proprietary dataset, the hidden malicious traits persist undetected, triggering only on attacker-chosen inputs.",
+    "examTip": "Transfer learning attacks persist through fine-tuning; defend by sourcing models only from trusted curators and inspecting activations.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 64,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Compensating Controls",
+    "question": "Why is Schema Validation considered a premier defense against prompt injection?",
+    "answer": "When an application requires structured JSON output, strict schema validation enforces allowed keys, types, and value formats. Because injection and exfiltration attacks almost always insert extra text, commands, or unexpected fields, non-conforming outputs are immediately rejected.",
+    "examTip": "Schema validation immediately drops outputs containing injected commands or exfiltrated fields.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 65,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Reasoning Security",
+    "question": "What are the two major security risks associated with Chain of Thought (CoT) reasoning?",
+    "answer": "1. **Execution Hijacking**: Since models treat intermediate reasoning as context for subsequent steps, injected prompt text in early reasoning steps redirects all downstream decisions.\n2. **Sensitive Data Leakage**: Intermediate steps often hold raw API keys, internal URLs, or private database outputs that could be exposed if traces are logged or displayed.",
+    "examTip": "CoT compromise hijacks downstream reasoning and leaks internal scratchpad secrets. Protect CoT integrity and redact logs.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 66,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Model Monitoring",
+    "question": "What is Model Skewing, and why can standard accuracy metrics be deceptive?",
+    "answer": "Model skewing occurs when production data distributions diverge from training distributions. It can be caused by natural drift or deliberate adversarial manipulation. Deceptively, a skewed model can maintain high overall accuracy while failing catastrophically on rare or targeted security events.",
+    "examTip": "Skewed models often maintain high overall accuracy while failing on specific security-critical events.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 67,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Compensating Controls",
+    "question": "What is Adversarial Training and which lifecycle phase does it belong to?",
+    "answer": "Adversarial training occurs during the **Model Development and Training phase**. Engineers intentionally inject perturbed or crafted adversarial samples into the training dataset so the model learns robust decision boundaries resistant to evasion attacks.",
+    "examTip": "Adversarial training occurs during model training to build tolerance against inference evasion.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 68,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Operational Controls",
+    "question": "What controls protect against Model Denial of Service (DoS)?",
+    "answer": "1. Ingestion rate limits (requests per minute)\n2. Strict token budgets per prompt and response\n3. Execution timeout limits\n4. Maximum recursion / reasoning chain depth caps\n5. Tool execution call restrictions.",
+    "examTip": "Model DoS defenses: rate limits, token budgets, timeouts, and max reasoning chain depth caps.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 69,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Data Sourcing",
+    "question": "How can crowd-sourced training data labeling be protected from malicious pollution?",
+    "answer": "By enforcing strong identity verification for all labelers and implementing continuous quality scoring with honeypot verification tasks to detect and exclude malicious or low-quality annotators.",
+    "examTip": "Defend crowd-sourced labeling with strong identity verification and continuous quality scoring.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 70,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Validation Methods",
+    "question": "What is Cross-Model Validation for hallucination detection?",
+    "answer": "Cross-model validation feeds the identical query to two or more independently architected models. If their outputs diverge significantly, the response is flagged for human review or factual consistency verification.",
+    "examTip": "Cross-model validation compares independent model outputs to catch hallucinations.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 71,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Compensating Controls",
+    "question": "What is the 'Never-Alone' design philosophy in AI security?",
+    "answer": "A principle where AI is never permitted to make high-impact, critical, or irreversible business or security decisions without human verification and authorization, combating dangerous overreliance on automated outputs.",
+    "examTip": "Never-Alone philosophy: high-impact decisions always require human confirmation.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 72,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Quick Check",
+    "question": "[Quick Check] Why is Insecure Output Handling dangerous even if the model itself is not breached?",
+    "answer": "Even if the model operates normally, if its outputs contain unvalidated characters or syntax (e.g., `<script>`, shell metacharacters) and downstream systems execute or render them without sanitization, attackers can achieve XSS, SSRF, or command execution.",
+    "examTip": "Treat all AI output as untrusted user input before passing to downstream interpreters.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 73,
+    "chapter": 4,
+    "chapterTitle": "Threats & Compensating Controls",
+    "category": "Quick Check",
+    "question": "[Quick Check] What tools can examine datasets for outliers signaling poisoning before training starts?",
+    "answer": "Tools like IBM's Adversarial Robustness Toolbox (ART) scan training datasets for anomalous distributions and statistical outliers that indicate poisoning.",
+    "examTip": "IBM Adversarial Robustness Toolbox (ART) detects poisoning outliers pre-training.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  }
+];
+
+    // State Management
+    let cards = [...CARDS_DATA];
+    let filteredCards = [...cards];
+    let currentIndex = 0;
+    let isFlipped = false;
+    let isGridView = false;
+
+    // LocalStorage Keys
+    const STORAGE_MASTERED = "secai_mastered_ids";
+    const STORAGE_REVIEW = "secai_review_ids";
+    const STORAGE_BOOKMARKS = "secai_bookmarked_ids";
+    const STORAGE_THEME = "secai_theme";
+
+    let masteredIds = new Set(JSON.parse(localStorage.getItem(STORAGE_MASTERED) || "[]"));
+    let reviewIds = new Set(JSON.parse(localStorage.getItem(STORAGE_REVIEW) || "[]"));
+    let bookmarkedIds = new Set(JSON.parse(localStorage.getItem(STORAGE_BOOKMARKS) || "[]"));
+
+    // DOM Elements
+    const flashcard = document.getElementById("flashcard");
+    const flashcardArea = document.getElementById("flashcardArea");
+    const frontChapter = document.getElementById("frontChapter");
+    const frontCategory = document.getElementById("frontCategory");
+    const frontTipBadge = document.getElementById("frontTipBadge");
+    const frontQuestion = document.getElementById("frontQuestion");
+    const cardCounter = document.getElementById("cardCounter");
+    const backCounter = document.getElementById("backCounter");
+    const navCounter = document.getElementById("navCounter");
+    const backChapter = document.getElementById("backChapter");
+    const backCategory = document.getElementById("backCategory");
+    const backAnswer = document.getElementById("backAnswer");
+    const backExamTip = document.getElementById("backExamTip");
+    const backExamTipText = document.getElementById("backExamTipText");
+    const bookmarkBtn = document.getElementById("bookmarkBtn");
+    const btnMarkReview = document.getElementById("btnMarkReview");
+    const btnMarkMastered = document.getElementById("btnMarkMastered");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const chapterPills = document.getElementById("chapterPills");
+    const searchInput = document.getElementById("searchInput");
+    const filterExamTips = document.getElementById("filterExamTips");
+    const filterQuickCheck = document.getElementById("filterQuickCheck");
+    const filterReview = document.getElementById("filterReview");
+    const filterBookmarked = document.getElementById("filterBookmarked");
+    const countMastered = document.getElementById("countMastered");
+    const countReview = document.getElementById("countReview");
+    const countTotal = document.getElementById("countTotal");
+    const progressBarMastered = document.getElementById("progressBarMastered");
+    const progressBarReview = document.getElementById("progressBarReview");
+    const deckView = document.getElementById("deckView");
+    const gridView = document.getElementById("gridView");
+    const emptyState = document.getElementById("emptyState");
+    const viewToggleBtn = document.getElementById("viewToggleBtn");
+    const shuffleBtn = document.getElementById("shuffleBtn");
+    const resetProgressBtn = document.getElementById("resetProgressBtn");
+    const themeToggleBtn = document.getElementById("themeToggleBtn");
+
+    // Filter state
+    let activeChapter = "all";
+    let activeSearch = "";
+    let onlyExamTips = false;
+    let onlyQuickCheck = false;
+    let onlyReview = false;
+    let onlyBookmarked = false;
+
+    // Theme initialization
+    const savedTheme = localStorage.getItem(STORAGE_THEME) || (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", savedTheme);
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute("data-theme");
+      const next = current === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem(STORAGE_THEME, next);
+    }
+
+    // Save Progress Helper
+    function saveState() {
+      localStorage.setItem(STORAGE_MASTERED, JSON.stringify([...masteredIds]));
+      localStorage.setItem(STORAGE_REVIEW, JSON.stringify([...reviewIds]));
+      localStorage.setItem(STORAGE_BOOKMARKS, JSON.stringify([...bookmarkedIds]));
+      updateProgressStats();
+    }
+
+    function updateProgressStats() {
+      const total = cards.length;
+      const mastered = masteredIds.size;
+      const review = reviewIds.size;
+
+      countMastered.textContent = mastered;
+      countReview.textContent = review;
+      countTotal.textContent = total;
+
+      const mPercent = total ? (mastered / total) * 100 : 0;
+      const rPercent = total ? (review / total) * 100 : 0;
+
+      progressBarMastered.style.width = mPercent + "%";
+      progressBarReview.style.width = rPercent + "%";
+    }
+
+    // Filter Logic
+    function applyFilters() {
+      filteredCards = cards.filter(card => {
+        if (activeChapter !== "all" && card.chapter.toString() !== activeChapter) return false;
+        if (onlyExamTips && !card.examTip) return false;
+        if (onlyQuickCheck && !card.isQuickCheck) return false;
+        if (onlyReview && !reviewIds.has(card.id)) return false;
+        if (onlyBookmarked && !bookmarkedIds.has(card.id)) return false;
+        if (activeSearch) {
+          const q = activeSearch.toLowerCase();
+          const matchQ = card.question.toLowerCase().includes(q);
+          const matchA = card.answer.toLowerCase().includes(q);
+          const matchT = (card.examTip || "").toLowerCase().includes(q);
+          const matchC = card.category.toLowerCase().includes(q);
+          if (!matchQ && !matchA && !matchT && !matchC) return false;
+        }
+        return true;
+      });
+
+      currentIndex = 0;
+      isFlipped = false;
+      flashcard.classList.remove("flipped");
+
+      if (filteredCards.length === 0) {
+        deckView.style.display = "none";
+        gridView.style.display = "none";
+        emptyState.style.display = "block";
+      } else {
+        emptyState.style.display = "none";
+        if (isGridView) {
+          deckView.style.display = "none";
+          gridView.style.display = "grid";
+          renderGridView();
+        } else {
+          deckView.style.display = "block";
+          gridView.style.display = "none";
+          renderCurrentCard();
+        }
+      }
+    }
+
+    // Render Current Flashcard
+    function renderCurrentCard() {
+      if (filteredCards.length === 0) return;
+      const card = filteredCards[currentIndex];
+
+      frontChapter.textContent = "Ch " + card.chapter + " • " + card.chapterTitle;
+      frontCategory.textContent = card.category;
+      frontQuestion.textContent = card.question;
+      frontTipBadge.style.display = card.examTip ? "flex" : "none";
+
+      backChapter.textContent = "Ch " + card.chapter + " • " + card.chapterTitle;
+      backCategory.textContent = card.category;
+      backAnswer.textContent = card.answer;
+
+      if (card.examTip) {
+        backExamTip.style.display = "block";
+        backExamTipText.textContent = card.examTip;
+      } else {
+        backExamTip.style.display = "none";
+      }
+
+      // Bookmark state
+      if (bookmarkedIds.has(card.id)) {
+        bookmarkBtn.classList.add("active");
+        bookmarkBtn.textContent = "★";
+      } else {
+        bookmarkBtn.classList.remove("active");
+        bookmarkBtn.textContent = "☆";
+      }
+
+      // Mastery buttons state
+      btnMarkMastered.classList.toggle("active", masteredIds.has(card.id));
+      btnMarkReview.classList.toggle("active", reviewIds.has(card.id));
+
+      // Counters
+      const countStr = (currentIndex + 1) + " / " + filteredCards.length;
+      cardCounter.textContent = countStr;
+      backCounter.textContent = countStr;
+      navCounter.textContent = (currentIndex + 1) + " of " + filteredCards.length;
+
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === filteredCards.length - 1;
+    }
+
+    // Render Grid View
+    function renderGridView() {
+      gridView.innerHTML = "";
+      filteredCards.forEach(card => {
+        const div = document.createElement("div");
+        div.className = "grid-card";
+
+        let tipHtml = "";
+        if (card.examTip) {
+          tipHtml = '<div class="grid-card-tip">⚡ <strong>Exam Tip:</strong> ' + card.examTip + '</div>';
+        }
+
+        div.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="badge-chapter">Ch ${card.chapter} • ${card.category}</span>
+            <span style="font-size:0.75rem; color:var(--text-muted)">#${card.id}</span>
+          </div>
+          <div class="grid-card-q">${card.question}</div>
+          <div class="grid-card-a">${card.answer}</div>
+          ${tipHtml}
+        `;
+        gridView.appendChild(div);
+      });
+    }
+
+    // Flipping
+    function flipCard() {
+      isFlipped = !isFlipped;
+      flashcard.classList.toggle("flipped", isFlipped);
+    }
+
+    // Navigation
+    function nextCard() {
+      if (currentIndex < filteredCards.length - 1) {
+        isFlipped = false;
+        flashcard.classList.remove("flipped");
+        currentIndex++;
+        renderCurrentCard();
+      }
+    }
+
+    function prevCard() {
+      if (currentIndex > 0) {
+        isFlipped = false;
+        flashcard.classList.remove("flipped");
+        currentIndex--;
+        renderCurrentCard();
+      }
+    }
+
+    // Actions
+    function toggleBookmark(e) {
+      if (e) e.stopPropagation();
+      if (filteredCards.length === 0) return;
+      const card = filteredCards[currentIndex];
+      if (bookmarkedIds.has(card.id)) {
+        bookmarkedIds.delete(card.id);
+      } else {
+        bookmarkedIds.add(card.id);
+      }
+      saveState();
+      renderCurrentCard();
+    }
+
+    function toggleMastered(e) {
+      if (e) e.stopPropagation();
+      if (filteredCards.length === 0) return;
+      const card = filteredCards[currentIndex];
+      if (masteredIds.has(card.id)) {
+        masteredIds.delete(card.id);
+      } else {
+        masteredIds.add(card.id);
+        reviewIds.delete(card.id); // mutually exclusive
+      }
+      saveState();
+      renderCurrentCard();
+      // Auto-advance if marking mastered
+      if (masteredIds.has(card.id) && currentIndex < filteredCards.length - 1) {
+        setTimeout(nextCard, 280);
+      }
+    }
+
+    function toggleReview(e) {
+      if (e) e.stopPropagation();
+      if (filteredCards.length === 0) return;
+      const card = filteredCards[currentIndex];
+      if (reviewIds.has(card.id)) {
+        reviewIds.delete(card.id);
+      } else {
+        reviewIds.add(card.id);
+        masteredIds.delete(card.id);
+      }
+      saveState();
+      renderCurrentCard();
+    }
+
+    function shuffleCards() {
+      for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+      }
+      applyFilters();
+    }
+
+    function resetProgress() {
+      if (confirm("Reset all mastery, review flags, and bookmarks?")) {
+        masteredIds.clear();
+        reviewIds.clear();
+        bookmarkedIds.clear();
+        saveState();
+        applyFilters();
+      }
+    }
+
+    // Event Listeners
+    flashcard.addEventListener("click", (e) => {
+      // Don't flip if clicking buttons
+      if (e.target.closest("button")) return;
+      flipCard();
+    });
+
+    prevBtn.addEventListener("click", prevCard);
+    nextBtn.addEventListener("click", nextCard);
+    bookmarkBtn.addEventListener("click", toggleBookmark);
+    btnMarkMastered.addEventListener("click", toggleMastered);
+    btnMarkReview.addEventListener("click", toggleReview);
+    shuffleBtn.addEventListener("click", shuffleCards);
+    resetProgressBtn.addEventListener("click", resetProgress);
+    themeToggleBtn.addEventListener("click", toggleTheme);
+
+    viewToggleBtn.addEventListener("click", () => {
+      isGridView = !isGridView;
+      viewToggleBtn.textContent = isGridView ? "🎴" : "🗂️";
+      viewToggleBtn.title = isGridView ? "Switch to Interactive Flashcard Deck Mode" : "Switch to Grid Browse Mode";
+      applyFilters();
+    });
+
+    // Chapter selection
+    chapterPills.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("pill-btn")) return;
+      document.querySelectorAll(".pill-btn").forEach(btn => btn.classList.remove("active"));
+      e.target.classList.add("active");
+      activeChapter = e.target.getAttribute("data-chapter");
+      applyFilters();
+    });
+
+    // Search
+    searchInput.addEventListener("input", (e) => {
+      activeSearch = e.target.value.trim();
+      applyFilters();
+    });
+
+    // Tag filters
+    filterExamTips.addEventListener("click", () => {
+      onlyExamTips = !onlyExamTips;
+      filterExamTips.classList.toggle("active", onlyExamTips);
+      applyFilters();
+    });
+
+    filterQuickCheck.addEventListener("click", () => {
+      onlyQuickCheck = !onlyQuickCheck;
+      filterQuickCheck.classList.toggle("active", onlyQuickCheck);
+      applyFilters();
+    });
+
+    filterReview.addEventListener("click", () => {
+      onlyReview = !onlyReview;
+      filterReview.classList.toggle("active", onlyReview);
+      applyFilters();
+    });
+
+    filterBookmarked.addEventListener("click", () => {
+      onlyBookmarked = !onlyBookmarked;
+      filterBookmarked.classList.toggle("active", onlyBookmarked);
+      applyFilters();
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener("keydown", (e) => {
+      if (["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) return;
+
+      switch(e.code) {
+        case "Space":
+        case "Enter":
+          e.preventDefault();
+          if (!isGridView) flipCard();
+          break;
+        case "ArrowRight":
+        case "KeyJ":
+          e.preventDefault();
+          if (!isGridView) nextCard();
+          break;
+        case "ArrowLeft":
+        case "KeyK":
+          e.preventDefault();
+          if (!isGridView) prevCard();
+          break;
+        case "KeyM":
+          e.preventDefault();
+          if (!isGridView) toggleMastered();
+          break;
+        case "KeyR":
+          e.preventDefault();
+          if (!isGridView) toggleReview();
+          break;
+        case "KeyS":
+          e.preventDefault();
+          shuffleCards();
+          break;
+        case "Digit0":
+          document.querySelector('.pill-btn[data-chapter="all"]').click();
+          break;
+        case "Digit1":
+          document.querySelector('.pill-btn[data-chapter="1"]').click();
+          break;
+        case "Digit2":
+          document.querySelector('.pill-btn[data-chapter="2"]').click();
+          break;
+        case "Digit3":
+          document.querySelector('.pill-btn[data-chapter="3"]').click();
+          break;
+        case "Digit4":
+          document.querySelector('.pill-btn[data-chapter="4"]').click();
+          break;
+      }
+    });
+
+    // Initial render
+    updateProgressStats();
+    applyFilters();
+  </script>
+</body>
+</html>
