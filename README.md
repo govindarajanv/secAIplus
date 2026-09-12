@@ -394,3 +394,106 @@ An example is a healthcare AI system connected to a hospital's patient database.
 If the AI queries the backend and reveals other people's medical data, then the system is leaking highly sensitive information. Proper backend access testing ensures that the AI enforces strict checks before fetching any data.
 
 
+## Chapter 3 - Installing Access Controls for AI
+
+### Access Control Mechanisms
+
+- **Role-Based Access Control (RBAC)**: Implemented based on the role of the user or system within the enterprise.
+- **Throttling**: Prevents abuse through limits on the number of requests per user or system.
+- **Content Filtering**: Limitations to block unsafe or illegal content from entering or leaving the API.
+- **Context-Aware Controls**: Adjustment of permissions based on external factors such as time or location.
+
+### Standards, Frameworks & Regulatory Compliance
+
+- **NIST AI Risk Management Framework (RMF)**: Published in 2023 by NIST after a collaborative process with the international community to evaluate and manage AI risks.
+- **ISO/IEC Standards**:
+  - **ISO/IEC 27001:2022**: International standard for Information Security Management Systems (ISMS).
+  - **ISO/IEC 42001:2023**: Standard for the establishment and maintenance of Artificial Intelligence Management Systems (AIMS).
+  - **ISO/IEC 23894:2023**: Guidance on AI Risk Management.
+- **OWASP Top 10 for LLM Applications**: Highlights critical risks including prompt injection, disclosure of sensitive information, data and model poisoning, and misinformation.
+- **Regulatory Frameworks**: Certain regulatory bodies require granular access controls to be fully documented and audited on a regular basis. Regulated data includes Personally Identifiable Information (PII) and Protected Health Information (PHI) under frameworks such as:
+  - **General Data Protection Regulation (GDPR)** (European Union)
+  - **Health Insurance Portability and Accountability Act (HIPAA)** (United States)
+  - **Payment Card Industry Data Security Standard (PCI-DSS)**
+
+### Model Access & Endpoint Security
+
+- **AI Model Access**: Refers to the ability to interact with, use, or control the AI model itself.
+- **User Access**: Specifically refers to a user's ability to interact with the model through an API or direct software application interface.
+- **Access Management & Auditing**: Model access is controlled using authentication mechanisms and granular authorization for each user type and API integration. Access levels can be restricted by limiting request rates/quotas, requiring comprehensive logging of each request, and conducting regular audits to ensure compliance with established security policies.
+
+### Agent & Tool Security Controls
+
+AI agents and connected tools are considered privileged execution surfaces and require additional security controls:
+- **Explicit Allow Lists & Permissions**: Enforces granular permissions and least privilege for agent access to tools.
+- **Network Access Control Lists (NACLs)**: Controls communications to and from the network and AI systems.
+- **Time Expiration for Secrets**: Implements short-lived credentials and expiring tokens used by tools to limit abuse windows.
+- **Logging of Input, Output, and Usage**: Captures full interaction telemetry to facilitate security monitoring and forensic analysis.
+- **Data Anonymization**: Protects data privacy and ensures regulatory compliance during tool execution.
+- **Human-in-the-Loop (HITL)**: Allows human operators to intervene, approve, or override critical agent actions and decisions.
+
+### Cryptographic & Privacy-Preserving Techniques
+
+- **Key Management**: Encryption keys must be securely stored using a Key Management Service (KMS), Trusted Platform Module (TPM), or Hardware Security Module (HSM).
+- **Trusted Execution Environments (TEE)**: Secure hardware enclaves that isolate sensitive data to ensure confidential computing and secure processing.
+- **Homomorphic Encryption (HE)**: Allows computations and processing directly on encrypted data without decrypting it first, preventing disclosure during "data in use."
+- **Differentially Private Stochastic Gradient Descent (DP-SGD)**:
+  - A privacy-preserving machine learning technique used during training.
+  - Computes gradients on training data, then **clips** the gradient so no single data point dominates the training process.
+  - Adds calibrated **random noise** to the gradient to prevent adversaries from inferring whether a specific record was included in the training set (mitigating membership inference attacks).
+  - **Privacy-Utility Trade-off**: Adding more noise increases data privacy but decreases model accuracy and performance.
+
+### Data Protection, Masking & Privacy Lifecycle
+
+- **Risk & Breach Definitions**:
+  - **Risk**: Potential threats and vulnerabilities affecting the confidentiality, integrity, and availability (CIA) of an information system or its components.
+  - **Data Breach**: Occurs when data is accessed or exposed to unauthorized entities.
+- **Data Masking & Privacy Techniques**:
+  - **Data Masking**: Replaces sensitive data with fictional yet realistic values (e.g., replacing customer names with synthetic names), allowing pattern analysis for model training and non-production testing while mitigating privacy risks.
+  - **Static Masking**: Permanent masking creating a separate, sanitized dataset.
+  - **Dynamic Masking**: Masks data on-the-fly as it is accessed or used, returning to stored values at rest.
+  - **Data Anonymization**: Permanently removes or alters identifying details so individual records cannot be linked back to a data subject.
+  - **Data Minimization vs. Data Redaction**:
+    - **Data Minimization**: Limits collection to only the bare minimum data needed to accomplish a task (**occurs before or during collection**).
+    - **Data Redaction**: Obscures, masks, or removes sensitive data that is not needed (**occurs after collection**).
+- **Data Loss Prevention (DLP)**:
+  - Tools such as Microsoft Purview DLP or Trellix DLP monitor and protect data throughout its lifecycle (collection to destruction).
+  - Relies on distinct data classification and labeling (e.g., Public, Internal, Confidential, Secret, Top Secret) to enforce controls.
+
+### AI Logging, Monitoring & KPIs
+
+Administrators must capture, analyze, and respond to AI system telemetry for performance optimization and regulatory compliance.
+
+- **Key Logged Telemetry Items**:
+  - **Input Prompts**: Monitored for restricted inputs, injection attempts, and abusive formatting.
+  - **Model Responses**: Monitored for restricted/controlled data leakage and unauthorized disclosures.
+  - **Latency**: System response delay (measured in milliseconds).
+  - **Stop Parameters**: Result of response generation and whether the user followed up or terminated the session.
+  - **Error Messages & Codes**: Tracks operational failures and model exceptions.
+  - **Token Usage**: Tracking volume per user/application to identify resource abuse and DoS attempts.
+- **Log Security & Integrity**:
+  - **Sanitization**: Automatically scrub PII and PHI from logs before storage.
+  - **Encryption**: Encrypt logs to prevent unauthorized access.
+  - **Integrity Protection**: Set log files to read-only permissions for administrators.
+  - **Remote Logging**: Ship logs off-site to prevent tampering and ensure forensic survivability.
+
+### Model Performance, Evaluation & Hallucination Prevention
+
+- **Model KPIs & Evaluation Metrics**:
+  - **Accuracy, Precision, Recall**: Standard classification performance metrics.
+  - **ROC AUC (Receiver Operating Characteristic - Area Under the Curve)**: Evaluates the trade-off between true positive and false positive rates, indicating how well the model discriminates between classes.
+  - **BLEU (Bilingual Evaluation Understudy)**: Measures n-gram precision overlap between generated text and reference text. Fast and simple, but does not account for missing context or semantic meaning.
+  - **ROUGE (Recall-Oriented Understudy for Gisting Evaluations)**: Measures overlap quality and recall between generated summaries and reference summaries; better suited for summarization because it tolerates paraphrasing.
+- **Model Drift & Canary Prompts**:
+  - Track model drift over time; retrain to re-baseline when outputs degrade.
+  - Deploy **canary prompts** (pre-formatted test queries) to continuously verify that model outputs remain accurate, safe, and aligned with organizational policies.
+- **Hallucination Prevention**:
+  - **Grounding Checks**: Validates and ties AI output back to verified, trusted data sources.
+  - **RAG Tuning**: Fine-tunes retrieval mechanisms and context integration to minimize fabrication.
+- **Advanced Testing & Validation**:
+  - **Counterfactual Testing**: Systematically alters input variables to observe changes in model behavior, aiding bias detection and explainability.
+  - **Golden Datasets**: Trusted, high-quality benchmark datasets used as an absolute ground-truth standard to validate model behavior after updates and audits.
+  - **Response Confidence Scoring**: Tags each model output with an explicit confidence score, enabling clinicians, analysts, and auditors to flag low-confidence recommendations for targeted human review.
+- **Prompt Optimization**:
+  - **Prompt Compression**: Reduces prompt length and complexity while preserving semantic meaning, lowering token costs and speeding up inference.
+
