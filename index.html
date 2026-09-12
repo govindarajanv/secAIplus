@@ -719,11 +719,12 @@
     <div class="controls-panel">
       <!-- Chapter Pills -->
       <div class="chapter-pills" id="chapterPills">
-        <button class="pill-btn active" data-chapter="all">All Chapters (73)</button>
+        <button class="pill-btn active" data-chapter="all">All Chapters (91)</button>
         <button class="pill-btn" data-chapter="1">Ch 1: AI & Data Concepts (17%)</button>
         <button class="pill-btn" data-chapter="2">Ch 2: Threat Modeling & Security (~40%)</button>
-        <button class="pill-btn" data-chapter="3">Ch 3: Access Controls for AI</button>
+        <button class="pill-btn" data-chapter="3">Ch 3: Access Controls</button>
         <button class="pill-btn" data-chapter="4">Ch 4: Threats & Controls</button>
+        <button class="pill-btn" data-chapter="5">Ch 5: AI Use & Misuse</button>
       </div>
 
       <!-- Filter Bar -->
@@ -747,7 +748,7 @@
           <div class="progress-counts">
             <span class="count-badge"><span class="dot dot-mastered"></span> <span id="countMastered">0</span> Mastered</span>
             <span class="count-badge"><span class="dot dot-review"></span> <span id="countReview">0</span> Review</span>
-            <span class="count-badge"><span class="dot dot-total"></span> <span id="countTotal">73</span> Total</span>
+            <span class="count-badge"><span class="dot dot-total"></span> <span id="countTotal">91</span> Total</span>
           </div>
         </div>
         <div class="progress-bar-bg">
@@ -781,7 +782,7 @@
               <div class="flip-hint">
                 <span>Click card or press <span class="kbd-shortcut">Space</span> to reveal answer</span>
               </div>
-              <div class="card-counter" id="cardCounter">1 / 73</div>
+              <div class="card-counter" id="cardCounter">1 / 91</div>
             </div>
           </div>
 
@@ -810,7 +811,7 @@
               <div class="flip-hint">
                 <span>Click card or press <span class="kbd-shortcut">Space</span> to flip back</span>
               </div>
-              <div class="card-counter" id="backCounter">1 / 73</div>
+              <div class="card-counter" id="backCounter">1 / 91</div>
             </div>
           </div>
 
@@ -820,7 +821,7 @@
       <!-- Deck Navigation -->
       <div class="deck-nav">
         <button id="prevBtn" class="btn-nav" title="Previous card (Left Arrow / K)">← Previous</button>
-        <div class="card-counter" id="navCounter">1 of 73</div>
+        <div class="card-counter" id="navCounter">1 of 91</div>
         <button id="nextBtn" class="btn-nav" title="Next card (Right Arrow / J)">Next →</button>
       </div>
     </div>
@@ -840,7 +841,7 @@
 
   <!-- Footer -->
   <footer>
-    CompTIA SecAI+ (CY0-001) Exam Cram Flashcards | Built for rapid revision across Chapters 1-4 | Keyboard: Space (Flip), ← / → (Prev/Next), M (Master), R (Review)
+    CompTIA SecAI+ (CY0-001) Exam Cram Flashcards | Built for rapid revision across Chapters 1-5 | Keyboard: Space (Flip), ← / → (Prev/Next), M (Master), R (Review)
   </footer>
 
   <script>
@@ -1647,6 +1648,204 @@
     "examTip": "IBM Adversarial Robustness Toolbox (ART) detects poisoning outliers pre-training.",
     "isExamTip": false,
     "isQuickCheck": true
+  },
+  {
+    "id": 74,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Fraud Detection",
+    "question": "Why is multi-transaction pattern analysis crucial for AI-based fraud detection?",
+    "answer": "It correlates multiple transactions across time and geographic locations, identifying physically or logically impossible sequences (e.g., purchases in distant cities minutes apart) that single-transaction evaluations fail to catch.",
+    "examTip": "Pattern analysis across multiple transactions detects impossible travel and distance/time constraints.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 75,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Deception Technology",
+    "question": "Distinguish between Honeypot, Honeynet, Honeyfile, and Honeytoken.",
+    "answer": "\u2022 **Honeypot**: A decoy host/server luring attackers away from production assets.\n\u2022 **Honeynet**: A network of decoy systems simulating an entire network segment.\n\u2022 **Honeyfile**: A decoy file/document (e.g., 'passwords.xlsx') that alerts when opened.\n\u2022 **Honeytoken**: A decoy credential, API key, or database record that triggers alerts upon authentication.",
+    "examTip": "Honeytoken = fake credential/token; Honeyfile = fake document; Honeypot = decoy host; Honeynet = decoy network.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 76,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Deception Technology",
+    "question": "How does AI enhance defensive honeypots against sophisticated attackers?",
+    "answer": "AI dynamically adapts honeypot responses in real time based on active attacker interactions and TTPs. This makes the honeypot indistinguishable from real production systems, defeats attacker fingerprinting, and maximizes attacker dwell time while defenders isolate the intrusion.",
+    "examTip": "Adaptive honeypots use AI to mimic production latency and services, extending attacker dwell time.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 77,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Offensive AI",
+    "question": "How do attackers attempt to detect and evade defensive honeypots?",
+    "answer": "Attackers analyze response latencies, timing variations, and data/service inconsistencies that distinguish honeypots from genuine production systems. Upon detection, they quickly pivot away to avoid wasting time.",
+    "examTip": "Attackers fingerprint honeypots by analyzing response timing and service inconsistencies.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 78,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Penetration Testing",
+    "question": "How does AI-enabled automated penetration testing improve upon traditional scanning?",
+    "answer": "It dynamically adapts attack vectors in real time based on defensive responses and newly uncovered footprinting variables (e.g., using Nmap open port/service scan results to autonomously select and chain targeted exploit modules).",
+    "examTip": "AI-enabled pentesting dynamically pivots exploits based on defensive responses and footprinting discoveries.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 79,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Interoperability Standards",
+    "question": "What is the Model Context Protocol (MCP) and what problem does it solve?",
+    "answer": "MCP is an emerging open standard that allows AI models, agents, and tools to share context, state, memory, and goals in a structured, interoperable manner, eliminating isolated tool silos in multi-agent workflows.",
+    "examTip": "MCP provides a common language for exchanging memory, goals, and state across AI agents and tools.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 80,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Code Security",
+    "question": "What is the key difference between Code Linting and Static Application Security Testing (SAST)?",
+    "answer": "\u2022 **Code Linting**: Evaluates code quality, syntax standards, formatting, and general bugs.\n\u2022 **SAST**: Specifically inspects source code for exploitable security vulnerabilities (e.g., SQL injection, XSS, broken authentication, hardcoded secrets).",
+    "examTip": "Code Linting = quality and styling; SAST = exploitable security vulnerabilities (SQLi, XSS, auth bypass).",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 81,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Supply Chain Security",
+    "question": "What is the relationship between Software Composition Analysis (SCA) and an SBOM?",
+    "answer": "\u2022 **SBOM (Software Bill of Materials)**: The formal comprehensive inventory listing all libraries, packages, frameworks, dependencies, datasets, and models.\n\u2022 **SCA (Software Composition Analysis)**: The automated process that scans the SBOM against known vulnerability databases (e.g., MITRE CVE, NIST NVD) to identify security risks.",
+    "examTip": "SBOM = inventory list of all dependencies and models; SCA = auditing tool matching dependencies against CVE/NVD.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 82,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Code Testing",
+    "question": "Differentiate Unit Testing, Model Testing, and Regression Testing (Fuzzing).",
+    "answer": "\u2022 **Unit Testing**: Tests isolated functions, methods, and individual algorithms.\n\u2022 **Model Testing**: Evaluates model task fit, input handling, fairness, and data leakage/injection risks.\n\u2022 **Regression Testing & Fuzzing**: Re-runs tests after updates to catch breaking changes; **fuzzing** feeds random/malformed inputs to test crash tolerance.",
+    "examTip": "Fuzzing injects random, malformed inputs to evaluate stability and catch edge-case crashes.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 83,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Threat Actor Tactics",
+    "question": "What is the fundamental difference between Misinformation and Disinformation?",
+    "answer": "\u2022 **Misinformation**: Inaccurate or false information shared **without malicious intent**.\n\u2022 **Disinformation**: False information **deliberately fabricated and distributed with the intent to deceive, manipulate public opinion, or cause harm**.",
+    "examTip": "Disinformation requires MALICIOUS INTENT to deceive; Misinformation is shared without malicious intent.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 84,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Threat Actor Tactics",
+    "question": "How does Code Obfuscation defeat traditional signature-based antivirus?",
+    "answer": "Obfuscation continuously alters code appearance, syntax, and instruction layout without changing what the program actually does. Because static antivirus tools match against specific fixed byte sequences, the altered code evades signature detection.",
+    "examTip": "Obfuscation changes how code appears without changing what it does, defeating static byte signatures.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 85,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Threat Actor Tactics",
+    "question": "How do adversaries leverage Generative Adversarial Networks (GANs) offensively?",
+    "answer": "Adversaries use GANs to craft highly evasive spam and phishing messages that slip past filters by subtly modifying characters or adding whitespace, and to generate synthetic polymorphic malware and deepfake media.",
+    "examTip": "Adversaries use GANs to generate evasive phishing variants, polymorphic malware, and realistic synthetic deepfakes.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 86,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Governance Patterns",
+    "question": "What is the M-of-N consensus model in AI system decision-making?",
+    "answer": "A design pattern requiring consensus from M out of N independent AI models/agents before an action or change is approved (e.g., 7 of 10 must concur). This eliminates single points of failure and prevents individual model hallucinations or bypasses from triggering unauthorized changes.",
+    "examTip": "M-of-N requires agreement across multiple independent models, preventing single-model hallucinations from causing unauthorized actions.",
+    "isExamTip": true,
+    "isQuickCheck": false
+  },
+  {
+    "id": 87,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Governance Patterns",
+    "question": "What is AI-Assisted Approval, and why is it preferred over fully automated execution?",
+    "answer": "AI evaluates proposed actions and outputs a recommendation (approve, deny, escalate), while a qualified human makes the final binding decision. This speeds and standardizes triage without surrendering critical accountability or human oversight.",
+    "examTip": "AI-assisted approval: AI recommends; human makes the final decision.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 88,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Governance Patterns",
+    "question": "Why must high-impact automated scaling or reconfiguration actions in cloud environments be gated by human authorization?",
+    "answer": "To maintain strict control over risk and financial cost. When automated usage or scaling exceeds preset risk thresholds, manual authorization prevents runaway operational bills or widespread accidental outages.",
+    "examTip": "Gated automated controls enforce preset cost and risk limits before high-impact cloud operations proceed.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 89,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Development Environments",
+    "question": "Compare No-Code and Low-Code environments in security automation.",
+    "answer": "\u2022 **No-Code**: 100% visual interface where users design workflows with zero manual coding (e.g., simple trigger-action playbooks).\n\u2022 **Low-Code**: AI generates code baselines while technicians write custom scripts for specialized integrations (e.g., custom SOAR playbooks and dashboards).",
+    "examTip": "No-code = 100% visual interface; Low-code = AI-generated baseline with human-written custom integrations.",
+    "isExamTip": false,
+    "isQuickCheck": false
+  },
+  {
+    "id": 90,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Quick Check",
+    "question": "[Quick Check] How does AI-based automated data correlation strengthen threat actor reconnaissance?",
+    "answer": "By rapidly combining and cross-referencing information from multiple public records, social media, and leaked credential databases to map high-value organizational targets and viable attack paths.",
+    "examTip": "AI reconnaissance correlates disparate OSINT and breach dumps to identify attack paths at machine speed.",
+    "isExamTip": false,
+    "isQuickCheck": true
+  },
+  {
+    "id": 91,
+    "chapter": 5,
+    "chapterTitle": "AI Use & Misuse",
+    "category": "Quick Check",
+    "question": "[Quick Check] Why does deepfake impersonation make email phishing attacks significantly more convincing?",
+    "answer": "It enables attackers to embed realistic video or voice recordings of trusted executives or colleagues that align precisely with the victim's real-world interactions and organizational hierarchy.",
+    "examTip": "Deepfake audio/video elevates spear phishing by mimicking trusted authority figures.",
+    "isExamTip": false,
+    "isQuickCheck": true
   }
 ];
 
@@ -2057,6 +2256,9 @@
           break;
         case "Digit4":
           document.querySelector('.pill-btn[data-chapter="4"]').click();
+          break;
+        case "Digit5":
+          document.querySelector('.pill-btn[data-chapter="5"]').click();
           break;
       }
     });
