@@ -138,7 +138,7 @@ AI agents and automated tools operate with elevated execution capabilities, maki
 | **Input Prompts** | Incoming queries and syntax | Detects prompt injection, jailbreak attempts, and abusive payloads |
 | **Model Responses** | Generated output content | Identifies data leakage, PII/PHI exposure, and unauthorized disclosure |
 | **Latency** | Response delays (in milliseconds) | Highlights performance bottlenecks, infrastructure strain, or DoS attacks |
-| **Stop Parameters** | Output completion status and user continuation | Evaluates whether query succeeded, was truncated, or was terminated |
+| **Stop Parameters** | Output completion status and user continuation | Evaluates whether the query succeeded, was truncated, or was terminated |
 | **Error Messages & Codes** | System errors and API exceptions | Identifies software faults, unauthorized attempts, or service outages |
 | **Token Usage** | Number of tokens consumed per user/app | Detects resource abuse, denial-of-wallet, and prompt stuffing |
 
@@ -160,7 +160,7 @@ AI agents and automated tools operate with elevated execution capabilities, maki
 | Metric | Full Name | Primary Evaluation Focus |
 |--------|-----------|--------------------------|
 | **Accuracy, Precision, Recall** | Standard Classification KPIs | Evaluates model correctness, false positives, and false negatives |
-| **ROC AUC** | Receiver Operating Characteristic - Area Under the Curve | Measures model's ability to discriminate between classes based on true positive vs. false positive trade-offs |
+| **ROC AUC** | Receiver Operating Characteristic - Area Under the Curve | Measures the model's ability to discriminate between classes based on true positive vs. false positive trade-offs |
 | **BLEU** | Bilingual Evaluation Understudy | Measures word-level precision overlap against reference texts; fast and simple, but ignores missing context and paraphrasing |
 | **ROUGE** | Recall-Oriented Understudy for Gisting Evaluations | Measures recall and content overlap; ideal for summarization tasks because it accommodates paraphrased text |
 
