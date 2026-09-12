@@ -2817,34 +2817,15 @@
     }
 
     function formatMarkdownContent(raw) {
-      // Pre-process custom alert styles for markdown
-      // Convert `> [!TIP] ...` or `> [!IMPORTANT] ...`
-      let md = raw.replace(/>\s*\[!TIP\]([\s\S]*?)(?=
-
-|$)/g, (match, body) => {
-        return `<div class="exam-callout"><div class="exam-callout-header">💡 High-Yield Exam Tip</div>
-
-${body.trim()}
-
-</div>`;
+      let md = raw.replace(/>\s*\[!TIP\]([\s\S]*?)(?=\n\n|$)/g, function(match, body) {
+        return '<div class="exam-callout"><div class="exam-callout-header">💡 High-Yield Exam Tip</div>\n\n' + body.trim() + '\n\n</div>';
       });
-
-      md = md.replace(/>\s*\[!IMPORTANT\]([\s\S]*?)(?=
-
-|$)/g, (match, body) => {
-        return `<div class="exam-callout" style="border-left-color:var(--danger); background:var(--danger-light)"><div class="exam-callout-header" style="color:var(--danger)">⚠️ Important Requirement</div>
-
-${body.trim()}
-
-</div>`;
+      md = md.replace(/>\s*\[!IMPORTANT\]([\s\S]*?)(?=\n\n|$)/g, function(match, body) {
+        return '<div class="exam-callout" style="border-left-color:var(--danger); background:var(--danger-light)"><div class="exam-callout-header" style="color:var(--danger)">⚠️ Important Requirement</div>\n\n' + body.trim() + '\n\n</div>';
       });
-
-      // Convert standalone **Exam Tip:** lines
-      md = md.replace(/\*\*Exam Tip:\*\* (.*?)(?=
-|$)/g, (match, body) => {
-        return `<div class="exam-callout"><div class="exam-callout-header">💡 High-Yield Exam Tip</div>${body}</div>`;
+      md = md.replace(/\*\*Exam Tip:\*\* (.*?)(?=\n|$)/g, function(match, body) {
+        return '<div class="exam-callout"><div class="exam-callout-header">💡 High-Yield Exam Tip</div>' + body + '</div>';
       });
-
       return md;
     }
 
