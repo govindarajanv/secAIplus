@@ -219,6 +219,10 @@ Auto-tags raw logs with threat intelligence indicators.
 
 Deep learning in cybersecurity often requires more effort than simple Python-based data analysis, as it involves complex data preprocessing, data cleaning and transformation, feature engineering, and extensive tuning of neural network models before they can be deployed effectively.
 
+In designing user prompts for security workflows, the primary reason to explicitly specify the desired output format (for example, particular JSON keys),Allowing downstream tools and scripts to reliably parse and act on the model's response. Defining an explicit output format makes responses predictable and machine-readable (for example, via JSON keys), so automation can reliably parse and use them in security workflows.
+
+gradient‑boosted decision trees well suited for tasks like ranking the likelihood that a newly registered domain is phishing in a supervised cybersecurity model. Gradient-boosted decision trees handle many heterogeneous features (domain age, registration, ASN, reputation, login failures) and capture non linear interactions, making them effective for supervised phishing-likelihood scoring.
+
 ## Quick Check
 
 1. **What is the key difference between deep learning and traditional IDS?**
