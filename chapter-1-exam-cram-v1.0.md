@@ -223,6 +223,10 @@ In designing user prompts for security workflows, the primary reason to explicit
 
 gradient‑boosted decision trees well suited for tasks like ranking the likelihood that a newly registered domain is phishing in a supervised cybersecurity model. Gradient-boosted decision trees handle many heterogeneous features (domain age, registration, ASN, reputation, login failures) and capture non linear interactions, making them effective for supervised phishing-likelihood scoring.
 
+A security architect is advising a healthcare organization that wants to use patient data from mobile devices to improve its diagnostic AI model, but strict privacy laws prohibit uploading raw patient data to the cloud. to train the model while preserving data locality and compliance, Using federated learning so the model is sent to devices, trained locally, and only model updates are returned. ederated learning sends the global model to client devices, trains on local data that never leaves the device, and returns only parameters/updates, which supports privacy and regulatory compliance.With differential privacy, raw or partially perturbed data is still shared with the server, conflicting with the stated constraints.Transfer learning on public datasets ignores the valuable on-device data the organization explicitly wants to leverage.
+
+when a security model maintains high accuracy throughout adversarial stress tests, Its decision logic can be trusted as resilient enough to support automated detection and response with rigor comparable to formal cryptographic key ceremony procedures. High accuracy under adversarial stress tests indicates decision logic that is hard to manipulate and reliable enough for automated detection and response, with rigor comparable to cryptographic key ceremonies.
+
 ## Quick Check
 
 1. **What is the key difference between deep learning and traditional IDS?**
