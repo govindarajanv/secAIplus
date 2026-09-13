@@ -215,6 +215,9 @@ Auto-tags raw logs with threat intelligence indicators.
 | **Defensive (Security Teams)** | Create threat scenarios, simulate attacks for red team exercises, prepare organizations to counter emerging threats |
 
 ---
+## Practice Test Failures
+
+Deep learning in cybersecurity often requires more effort than simple Python-based data analysis, as it involves complex data preprocessing, data cleaning and transformation, feature engineering, and extensive tuning of neural network models before they can be deployed effectively.
 
 ## Quick Check
 
