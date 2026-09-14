@@ -380,4 +380,4 @@ Rate limits restrict requests within short time windows (e.g., 10/min). Input qu
 
 ---
 
-*Version: v1.3 | Chapter: 2 | Domain: Implementing Threat Modeling and Securing AI Systems*
+*Version: v1.4 | Chapter: 2 | Domain: Implementing Threat Modeling and Securing AI Systems*

@@ -276,4 +276,4 @@ In the context of the EU AI Act, what compliance obligation is mandated for AI s
 
 ---
 
-*Version: v1.3 | Chapter: 6 | Domain: Understanding AI Governance, Risk, and Compliance*
+*Version: v1.4 | Chapter: 6 | Domain: Understanding AI Governance, Risk, and Compliance*
