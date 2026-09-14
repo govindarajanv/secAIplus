@@ -318,4 +318,4 @@ Training (state→action→reward cycles), Shadow mode (recommendations only), A
 
 ---
 
-*Version: v1.2 | Chapter: 1 | Domain: AI & Data Concepts for Cybersecurity (17%)*
+*Version: v1.3 | Chapter: 1 | Domain: AI & Data Concepts for Cybersecurity (17%)*

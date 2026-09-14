@@ -1,10 +1,11 @@
 # Chapter 2 - Exam Cram Notes
 
 ## Implementing Threat Modeling and Securing AI Systems
-
 **Domain Weight:** ~40% of SecAI+ exam
 
 ---
+
+**Exam Tip (Practice Test):** Deploying a third-party/pre-trained model → greatest risk is it wasn't built to your security/ethics/regulatory requirements → most critical control is **auditing the vendor's security certifications and evaluation reports** (bias, privacy, compliance gaps). Reviewing user access logs alone shows *who* used the model, not whether its *behavior* is secure — supporting measure only.
 
 ## AI Threat Modeling Overview
 
@@ -23,22 +24,17 @@ AI threat modeling identifies potential threats and analyzes risks associated wi
 
 | Resource | Description |
 |----------|-------------|
-| **MIT AI Risk Repository** | 1,600+ risks from 65 frameworks; 7 domains, 23 subdomains |
-| **CVE AI Workgroup** | Analyzes AI threats and assigns CVE IDs |
+| **MIT AI Risk Repository** | 3 parts: AI Risk Database (2,244+ risk records), Causal Taxonomy, Domain Taxonomy (7 domains, 23 subdomains) |
 | **AI Vulnerability Database (AVID)** | Open-source knowledge base of AI failure modes |
 | **AI Incident Database (AIID)** | Real-time AI incidents (deepfakes, biases, misuse) |
 | **arXiv** | Open platform for AI research papers |
 | **CWE** | Adapted for AI: CWE-77 (Command Injection), CWE-200 (Sensitive Info Exposure) |
 
-### MIT AI Risk Repository - 7 Domains
+### MIT AI Risk Repository — Three Parts
 
-1. Discrimination & Toxicity
-2. Privacy & Security
-3. Misinformation
-4. Malicious Actors & Misuse
-5. Human-Computer Interaction
-6. Socioeconomic & Environmental
-7. AI System Safety, Failures, & Limitations
+1. **AI Risk Database** — centralized database, 2,244+ risk records; each record = one risk with source paper title, keywords, evidence grouped into risk categories; every risk classified into both taxonomies
+2. **Causal Taxonomy** — classifies by origin: AI / human user-developer / external factors; intentional vs unintentional vs "other"; and by **timing of identification** (pre-deployment vs post-training/deployment)
+3. **Domain Taxonomy** — 7 domains, 23 subdomains: Discrimination & Toxicity, Privacy & Security, Misinformation, Malicious Actors & Misuse, Human-Computer Interaction, Socioeconomic & Environmental, AI System Safety Failures & Limitations
 
 ---
 
@@ -281,17 +277,27 @@ Unauthorized data access through AI interface.
 ---
 ## Practice Test Failures
 
-MIT AI risk repository contains three parts:
+Points missed on the practice test after studying this cram. Each item below is written as an exam-ready takeaway.
 
-AI Risk database—This is the centralized database with over 2,244 records, each record defining an AI risk. The database includes the title of the paper and provides keywords for quick reference. The evidence for each risk is collected and grouped into risk categories. Each risk is explained in detail and supported by evidence from the sources. In addition, the risks are classified into both causal and domain taxonomies.
-Causal Taxonomy of AI Risks—This taxonomy classifies risks based on how they are originated and whether a risk is caused by a decision or action made by AI, human user/developer, or other external factors. It distinguishes whether the risk is caused intentionally, like the expected outcomes of a goal, unintentionally, or even classified as "other", which can't be determined. It also categorizes the risk based on the timing of the risk identified, like before the deployment of the model or if the risk occurs after the training and deployment. This helps security teams trace back the steps to exactly when the risk was identified during the model development lifecycle.
-Domain Taxonomy of AI Risks—The domain taxonomy classifies risks into seven AI risk domains and 23 subdomains, such as (1) Discrimination & Toxicity, (2) Privacy & Security, (3) Misinformation, (4) Malicious Actors & Misuse, (5) Human-Computer Interaction, (6) Socioeconomic & Environmental, and (7) AI System Safety, Failures, & Limitations. These domains help security teams search for keywords and identify risks within the AI system across these domains.
+**1. The three parts of the MIT AI Risk Repository**
 
-Endpoint access controls at the gateway allow you to centrally manage which specific applications and users are permitted to access the AI model. By leveraging authentication and authorization, you ensure only explicitly approved entities can interact with the service, immediately preventing deprecated or unauthorized applications from sending requests to the AI endpoint. This proactive, automated control tightly manages the attack surface and supports strong audit and compliance capabilities.
+The MIT AI Risk Repository contains three parts:
 
-When deploying a third-party, pre-trained AI model, the greatest risk is that it may not have been developed with your organization's specific security, ethical, or regulatory requirements in mind. The most critical control in this scenario is to perform a review and audit of the vendor's security certifications and evaluation reports, as this step ensures you understand the extent to which the model has been assessed for bias, data privacy, and compliance. This analysis allows you to identify any gaps between the model's capabilities or default behaviors and your company's regulatory or policy obligations, enabling more informed decisions about acceptance, additional configuration, or rejection of the model. Thorough vendor due diligence is considered foundational before relying on the model in sensitive or regulated environments.
+1. **AI Risk Database** — A centralized database with over 2,244 AI risk records. Each record defines one AI risk, includes the source paper's title, and provides keywords for quick reference. Evidence for each risk is collected and grouped into risk categories, explained in detail, and supported by sources. Every risk is classified into both the causal and domain taxonomies.
+2. **Causal Taxonomy of AI Risks** — Classifies risks by how they originate: whether caused by a decision or action of AI, a human user/developer, or other external factors; whether intentional (expected outcome of a goal), unintentional, or "other" (undeterminable). It also categorizes risks by **timing of identification** — before deployment vs. after training/deployment — helping security teams trace exactly when in the model development lifecycle a risk surfaced.
+3. **Domain Taxonomy of AI Risks** — Classifies risks into **seven AI risk domains and 23 subdomains**: (1) Discrimination & Toxicity, (2) Privacy & Security, (3) Misinformation, (4) Malicious Actors & Misuse, (5) Human-Computer Interaction, (6) Socioeconomic & Environmental, and (7) AI System Safety, Failures, & Limitations. These domains help security teams search by keyword and identify risks across areas of the AI system.
 
-Reviewing user access logs to determine who has interacted with the model helps you track which users or systems have interacted with the model, which can be useful in an incident response scenario or for ongoing monitoring. This step provides minimal insight into the AI's behavioral security posture and should be used as a supporting measure only after direct testing of the model's outputs.
+**2. Endpoint access controls at the AI gateway**
+
+Endpoint access controls at the gateway centrally manage which specific applications and users may access the AI model. Authentication and authorization ensure only explicitly approved entities interact with the service, immediately blocking deprecated or unauthorized applications from sending requests to the AI endpoint. This proactive, automated control tightly manages the attack surface and supports strong audit and compliance capabilities.
+
+**3. Third-party pre-trained model deployment — greatest risk and critical control (scenario)**
+
+The greatest risk when deploying a third-party, pre-trained AI model is that it may not have been developed with your organization's security, ethical, or regulatory requirements in mind. The most critical control is to **review and audit the vendor's security certifications and evaluation reports** — this reveals how far the model has been assessed for bias, data privacy, and compliance, exposes gaps between the model's default behaviors and your regulatory/policy obligations, and drives informed accept/configure/reject decisions. Thorough vendor due diligence is foundational before relying on the model in sensitive or regulated environments.
+
+**4. Why reviewing user access logs alone is insufficient**
+
+Reviewing user access logs tracks which users or systems interacted with the model — useful for incident response and ongoing monitoring — but it provides **minimal insight into the AI's behavioral security posture**. Use it only as a supporting measure, after direct testing of the model's outputs.
 
 ## Quick Check
 
@@ -357,4 +363,4 @@ Rate limits restrict requests within short time windows (e.g., 10/min). Input qu
 
 ---
 
-*Version: v1.2 | Chapter: 2 | Domain: Implementing Threat Modeling and Securing AI Systems*
+*Version: v1.3 | Chapter: 2 | Domain: Implementing Threat Modeling and Securing AI Systems*

@@ -177,4 +177,4 @@ Grounding checks (validating claims against trusted authoritative knowledge base
 
 ---
 
-*Version: v1.2 | Chapter: 4 | Domain: Distinguishing AI-Related Threats and Compensating Controls*
+*Version: v1.3 | Chapter: 4 | Domain: Distinguishing AI-Related Threats and Compensating Controls*
