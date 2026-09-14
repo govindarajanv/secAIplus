@@ -154,4 +154,4 @@ To prevent runaway infrastructure costs, resource exhaustion, or catastrophic re
 
 ---
 
-*Version: v1.1 | Chapter: 5 | Domain: Leveraging AI in Security and Understanding Its Misuse*
+*Version: v1.2 | Chapter: 5 | Domain: Leveraging AI in Security and Understanding Its Misuse*

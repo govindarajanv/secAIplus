@@ -246,9 +246,14 @@ A healthcare organization wants to use patient data from mobile devices to impro
 
 When a security model maintains high accuracy throughout adversarial stress tests, its decision logic can be trusted as resilient enough to support automated detection and response, with rigor comparable to formal cryptographic key ceremony procedures. High accuracy under adversarial stress tests indicates decision logic that is hard to manipulate and reliable enough for automated detection and response.
 
-a retrieval-augmented generation system require strong protections around its vector storage because Even though the data is numeric, it still reflects confidential content, so compromise of this store can expose a large portion of an organization's knowledge.
+**6. Why a RAG system's vector storage requires strong protections**
 
-elements of the reinforcement learning cycle as applied to a cybersecurity response agent (such as an adaptive firewall policy engine) - During training, the sequence "state → action → reward" is executed thousands of times in a lab that replays recorded or synthetic traffic so the agent can refine its policy. The agent repeatedly observes a snapshot of the network environment, selects an action (such as allow, throttle, or block), and then receives a reward score based on how that action affected security and user experience.The reward function can assign positive scores for correctly blocked malicious traffic and negative scores for false positives or added latency, guiding the agent toward an optimal long‑term strategy.
+Although vector embeddings are numeric, they still reflect confidential content: embeddings are reversible enough to reconstruct sensitive source material, so compromise of the vector store can expose a large portion of an organization's knowledge. This is why RAG protections include encryption of the vector index, tenant isolation, and input sanitization.
+
+**7. The reinforcement learning cycle in a cybersecurity response agent**
+
+During training, the sequence **state → action → reward** is executed thousands of times in a lab that replays recorded or synthetic traffic so the agent can refine its policy. The agent repeatedly observes a snapshot of the network environment, selects an action (such as allow, throttle, or block), and then receives a reward score based on how that action affected security and user experience. The reward function assigns positive scores for correctly blocked malicious traffic and negative scores for false positives or added latency, guiding the agent toward an optimal long-term strategy.
+
 ## Quick Check
 
 1. **What is the key difference between deep learning and traditional IDS?**
@@ -313,4 +318,4 @@ Training (state→action→reward cycles), Shadow mode (recommendations only), A
 
 ---
 
-*Version: v1.1 | Chapter: 1 | Domain: AI & Data Concepts for Cybersecurity (17%)*
+*Version: v1.2 | Chapter: 1 | Domain: AI & Data Concepts for Cybersecurity (17%)*

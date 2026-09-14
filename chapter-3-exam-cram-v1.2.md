@@ -249,4 +249,4 @@ Grounding checks tie model responses directly back to verified, trusted data sou
 
 ---
 
-*Version: v1.1 | Chapter: 3 | Domain: Installing Access Controls for AI*
+*Version: v1.2 | Chapter: 3 | Domain: Installing Access Controls for AI*
