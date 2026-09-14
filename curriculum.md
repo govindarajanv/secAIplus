@@ -1,0 +1,96 @@
+# SecAI+ (CY0-001) Curriculum & Exam Cram Mapping
+
+Source of truth: [CompTIA SecAI+ (V1) exam objectives](https://www.comptia.org/en-em/certifications/secai/#overview)
+
+## Exam Details
+
+| Item | Detail |
+|------|--------|
+| Exam version | V1 |
+| Series code | CY0-001 |
+| Launch date | February 17, 2026 |
+| Questions | Maximum of 60, multiple-choice and performance-based |
+| Duration | 60 minutes |
+| Passing score | 600 (on a scale of 100–900) |
+| Languages | English and Japanese |
+| Recommended experience | 3–4 years in IT, 2+ years hands-on cybersecurity; Security+, CySA+, PenTest+, or equivalent |
+| Retirement | Estimated 3 years after launch |
+
+---
+
+## Domain 1.0 — Basic AI Concepts Related to Cybersecurity (17%)
+
+- **1.1 Explain core AI principles and terminology**: Machine learning, deep learning, natural language processing, and automation.
+- **1.2 Identify AI applications in security**: Use cases for AI in threat detection, defense, and security operations.
+- **1.3 Recognize AI-driven threats**: Automated phishing, polymorphic malware, adversarial machine learning, and malicious use of generative AI.
+
+### Cram Mapping
+
+| Objective | Topics | Cram Coverage |
+|-----------|--------|---------------|
+| 1.1 Core AI principles & terminology | ML, deep learning, NLP, transformers, GANs, LLMs/SLMs; supervised/unsupervised/RL/federated learning; fine-tuning, pre-training, pruning, quantization; model validation, k-fold cross-validation, overfitting, concept drift, data poisoning | `chapter-1-exam-cram-v1.1.md` § 1.1 (AI Types & Techniques) |
+| 1.2 AI applications in security | Threat detection, intrusion detection, UEBA, phishing classification, log analysis, Isolation Forest, autoencoders, RL response agents, prompt engineering for security workflows | `chapter-1-exam-cram-v1.1.md` § 1.1 (Anomaly Detection Models, RL Deep Dive), § 1.2 (Prompt Engineering), § 1.4 (AI Offensive & Defensive Use) |
+| 1.3 AI-driven threats | Automated phishing, polymorphic malware, adversarial ML, malicious generative AI | `chapter-1-exam-cram-v1.1.md` § 1.4; cross-referenced with `chapter-5-exam-cram-v1.1.md` § 5.3 |
+
+---
+
+## Domain 2.0 — Securing AI Systems (40%)
+
+- **2.1 Implement security controls**: Protect AI systems, data, and models using robust technical safeguards.
+- **2.2 Secure AI deployment environments**: Apply best practices across on-premises, cloud, and hybrid infrastructures.
+- **2.3 Mitigate adversarial risks**: Defend against attacks targeting AI models, data pipelines, and inference layers.
+
+### Cram Mapping
+
+| Objective | Topics | Cram Coverage |
+|-----------|--------|---------------|
+| 2.1 Implement security controls | Threat modeling frameworks (OWASP LLM/ML Top 10, MITRE ATLAS, NIST AI RMF, STRIDE, DREAD, MAESTRO); model/gateway controls; guardrails (PII redaction, prompt injection, jailbreak, secrets detection); rate limits, token limits, input/quantity quotas, modality limits; access control mechanisms (RBAC, throttling, content filtering); endpoint security; agent/tool security; cryptography (KMS, TPM, HSM, TEE, homomorphic encryption, DP-SGD); data protection/masking/DLP; logging & audit telemetry | `chapter-2-exam-cram-v1.1.md` (Threat Modeling, Security Controls, Gateway Controls); `chapter-3-exam-cram-v1.1.md` § 3.1–3.7 (Access Controls, Cryptographic & Privacy Techniques, Data Protection, Logging) |
+| 2.2 Secure AI deployment environments | On-prem vs pre-trained vs vendor models evaluation; AI gateway architecture; deployment isolation; sanctioned vs unsanctioned (Shadow AI); public vs private model deployments (multi-tenant SaaS vs isolated VPC/on-prem) | `chapter-2-exam-cram-v1.1.md` (Model Evaluation, AI Gateway Controls); `chapter-6-exam-cram-v1.1.md` § 6.6 (Model Sourcing, Shadow AI & Deployment Architectures) |
+| 2.3 Mitigate adversarial risks | AI lifecycle attacks; poisoning, backdoor, trojan attacks; model inversion, membership inference, model theft; evasion, output handling, excessive agency; CoT manipulation, model skewing, model DoS; compensating controls matrix; RAG/vector store protections; data handling techniques (cleansing, verification, lineage, provenance, integrity, augmentation, balancing) | `chapter-4-exam-cram-v1.1.md` § 4.1–4.5 (AI Lifecycle, Attack Vectors, Compensating Controls); `chapter-1-exam-cram-v1.1.md` § 1.3 (Data Security for AI, RAG, Data Processing Techniques); `chapter-2-exam-cram-v1.1.md` (OWASP ML Top 10 attack types) |
+
+---
+
+## Domain 3.0 — AI-Assisted Security (24%)
+
+- **3.1 Enhance detection and response**: Use AI-driven tools to identify anomalies, detect threats, and accelerate incident remediation.
+- **3.2 Automate security workflows**: Integrate AI for event triage, alert correlation, and response orchestration.
+- **3.3 Apply AI techniques in operations**: Incorporate AI into threat modeling, behavior analysis, and continuous monitoring.
+
+### Cram Mapping
+
+| Objective | Topics | Cram Coverage |
+|-----------|--------|---------------|
+| 3.1 Enhance detection and response | AI-driven threat detection, pattern analysis for fraud, adaptive honeypots/deception technology, anomaly detection, SOAR-automated playbooks | `chapter-5-exam-cram-v1.1.md` § 5.1 (Defensive Applications); `chapter-1-exam-cram-v1.1.md` § 1.1 (Anomaly Detection Models, RL Deep Dive) |
+| 3.2 Automate security workflows | SOAR platforms, event triage, alert correlation, response orchestration, no-code vs low-code environments | `chapter-5-exam-cram-v1.1.md` § 5.1 (SOAR, No-Code vs Low-Code) |
+| 3.3 Apply AI techniques in operations | AI threat modeling (STRIDE, MITRE ATLAS), behavioral analysis, continuous monitoring, secure code development/review (linting, SAST, SCA, SBOM, unit/model/regression testing, fuzzing), AI in IDEs, MCP | `chapter-5-exam-cram-v1.1.md` § 5.2 (Secure Code Development, Review & Testing); `chapter-2-exam-cram-v1.1.md` (AI Threat Modeling Overview, Threat Modeling Frameworks) |
+
+---
+
+## Domain 4.0 — AI Governance, Risk, and Compliance (19%)
+
+- **4.1 Understand regulatory frameworks**: Identify global governance requirements and their implications for AI adoption.
+- **4.2 Integrate GRC into AI projects**: Incorporate governance, risk management, and compliance practices throughout the AI lifecycle.
+- **4.3 Ensure responsible AI use**: Apply ethical guidelines, legal standards, and industry frameworks such as GDPR and NIST AI RMF.
+
+### Cram Mapping
+
+| Objective | Topics | Cram Coverage |
+|-----------|--------|---------------|
+| 4.1 Understand regulatory frameworks | EU AI Act risk tiers, OECD AI principles, ISO/IEC 42001/23894/22989/5338, NIST AI RMF (Govern/Map/Measure/Manage), GDPR, HIPAA, PCI-DSS | `chapter-6-exam-cram-v1.1.md` § 6.5 (Regulatory Frameworks, Standards & Compliance); `chapter-3-exam-cram-v1.1.md` § 3.2 (Standards, Frameworks & Regulatory Compliance) |
+| 4.2 Integrate GRC into AI projects | AI CoE positioning models, roles & responsibilities matrix, policies/procedures/technical guardrails, GRC maturity roadmap, human oversight (HITL/HOTL), M-of-N consensus, AI-assisted approvals, gated automated controls, third-party compliance evaluations & audits | `chapter-6-exam-cram-v1.1.md` § 6.1–6.3, § 6.7 (AI CoE, Roles, Policies, Third-Party Evaluations); `chapter-5-exam-cram-v1.1.md` § 5.4 (AI Governance & Human Oversight Patterns) |
+| 4.3 Ensure responsible AI use | Responsible AI principles (fairness, accountability, transparency & explainability, privacy & data governance, sustainability, consistency & reliability), model cards, watermarking/content provenance, incident playbooks & reputational risk | `chapter-6-exam-cram-v1.1.md` § 6.4, § 6.7 (Responsible AI Principles, Reputational Risk Governance); `chapter-1-exam-cram-v1.1.md` § 1.3 (Watermarking) |
+
+---
+
+## Cram File Index
+
+| File | Chapter | Primary Domain(s) |
+|------|---------|-------------------|
+| `chapter-1-exam-cram-v1.1.md` | Ch 1 — AI & Data Concepts for Cybersecurity | Domain 1.0 (17%) |
+| `chapter-2-exam-cram-v1.1.md` | Ch 2 — Implementing Threat Modeling and Securing AI Systems | Domain 2.0 (40%) |
+| `chapter-3-exam-cram-v1.1.md` | Ch 3 — Installing Access Controls for AI | Domain 2.0 (40%) |
+| `chapter-4-exam-cram-v1.1.md` | Ch 4 — Distinguishing AI-Related Threats and Compensating Controls | Domain 2.0 (40%) |
+| `chapter-5-exam-cram-v1.1.md` | Ch 5 — Leveraging AI in Security and Understanding Its Misuse | Domain 3.0 (24%) |
+| `chapter-6-exam-cram-v1.1.md` | Ch 6 — Understanding AI Governance, Risk, and Compliance | Domain 4.0 (19%) |
+
+**Study weighting guide:** Prioritize Domain 2.0 (40%) — chapters 2–4 combined. Then Domain 3.0 (24%, chapter 5), Domain 4.0 (19%, chapter 6), and Domain 1.0 (17%, chapter 1).

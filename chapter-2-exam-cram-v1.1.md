@@ -341,3 +341,7 @@ Input (screens prompts before reaching model), Output (inspects and filters resp
 
 Rate limits restrict requests within short time windows (e.g., 10/min). Input quotas define maximum data volume over longer periods (daily, weekly, monthly) measured in MB, GB, or token count.
 </details>
+
+---
+
+*Version: v1.1 | Chapter: 2 | Domain: Implementing Threat Modeling and Securing AI Systems*

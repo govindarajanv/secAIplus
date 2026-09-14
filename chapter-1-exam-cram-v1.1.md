@@ -112,6 +112,8 @@ Auto-tags raw logs with threat intelligence indicators.
 - **Secure aggregation**: User data encrypted → server decrypts only when enough updates combined → only average revealed; server never sees single user data
 - **Differential privacy**: Adds calibrated noise to all user data → individual contribution hidden but results stay useful
 
+**Exam Tip (Practice Test):** Privacy-constrained training scenario → **federated learning** when raw data must never leave the device (only model updates are returned). **Differential privacy** still shares perturbed data with the server; **transfer learning on public datasets** ignores the organization's own on-device data.
+
 ---
 
 ## 1.2 Prompt Engineering
@@ -215,17 +217,34 @@ Auto-tags raw logs with threat intelligence indicators.
 | **Defensive (Security Teams)** | Create threat scenarios, simulate attacks for red team exercises, prepare organizations to counter emerging threats |
 
 ---
+
 ## Practice Test Failures
 
-Deep learning in cybersecurity often requires more effort than simple Python-based data analysis, as it involves complex data preprocessing, data cleaning and transformation, feature engineering, and extensive tuning of neural network models before they can be deployed effectively.
+Points missed on the practice test after studying this cram. Each item below is written as an exam-ready takeaway.
 
-In designing user prompts for security workflows, the primary reason to explicitly specify the desired output format (for example, particular JSON keys),Allowing downstream tools and scripts to reliably parse and act on the model's response. Defining an explicit output format makes responses predictable and machine-readable (for example, via JSON keys), so automation can reliably parse and use them in security workflows.
+**1. Deep learning vs simple Python-based analysis**
 
-gradient‑boosted decision trees well suited for tasks like ranking the likelihood that a newly registered domain is phishing in a supervised cybersecurity model. Gradient-boosted decision trees handle many heterogeneous features (domain age, registration, ASN, reputation, login failures) and capture non linear interactions, making them effective for supervised phishing-likelihood scoring.
+Deep learning in cybersecurity requires far more effort than a simple Python-based data analysis: complex data preprocessing, data cleaning and transformation, feature engineering, and extensive tuning of neural network models are all required before deployment.
 
-A security architect is advising a healthcare organization that wants to use patient data from mobile devices to improve its diagnostic AI model, but strict privacy laws prohibit uploading raw patient data to the cloud. to train the model while preserving data locality and compliance, Using federated learning so the model is sent to devices, trained locally, and only model updates are returned. ederated learning sends the global model to client devices, trains on local data that never leaves the device, and returns only parameters/updates, which supports privacy and regulatory compliance.With differential privacy, raw or partially perturbed data is still shared with the server, conflicting with the stated constraints.Transfer learning on public datasets ignores the valuable on-device data the organization explicitly wants to leverage.
+**2. Explicit output format in user prompts**
 
-when a security model maintains high accuracy throughout adversarial stress tests, Its decision logic can be trusted as resilient enough to support automated detection and response with rigor comparable to formal cryptographic key ceremony procedures. High accuracy under adversarial stress tests indicates decision logic that is hard to manipulate and reliable enough for automated detection and response, with rigor comparable to cryptographic key ceremonies.
+The primary reason to explicitly specify the desired output format (for example, particular JSON keys) when designing user prompts for security workflows is to allow downstream tools and scripts to reliably parse and act on the model's response. Explicit output formats make responses predictable and machine-readable so automation can use them without ad hoc parsing.
+
+**3. Gradient-boosted decision trees for phishing-likelihood scoring**
+
+Gradient-boosted decision trees are well suited for supervised cybersecurity tasks such as ranking the likelihood that a newly registered domain is phishing. They handle many heterogeneous features (domain age, registration data, ASN, reputation, login failures) and capture non-linear interactions between them, making them effective for supervised phishing-likelihood scoring.
+
+**4. Federated learning under strict data-locality constraints (scenario)**
+
+A healthcare organization wants to use patient data from mobile devices to improve its diagnostic AI model, but strict privacy laws prohibit uploading raw patient data to the cloud. Train the model while preserving data locality and compliance by **using federated learning**: the model is sent to the devices, trained locally, and only model updates are returned. Federated learning sends the global model to client devices, trains on local data that never leaves the device, and returns only parameters/updates, which supports privacy and regulatory compliance.
+
+**Why the tempting wrong options fail:**
+- **Differential privacy** — raw or partially perturbed data is still shared with the server, conflicting with the stated constraints.
+- **Transfer learning on public datasets** — ignores the valuable on-device data the organization explicitly wants to leverage.
+
+**5. High accuracy under adversarial stress tests**
+
+When a security model maintains high accuracy throughout adversarial stress tests, its decision logic can be trusted as resilient enough to support automated detection and response, with rigor comparable to formal cryptographic key ceremony procedures. High accuracy under adversarial stress tests indicates decision logic that is hard to manipulate and reliable enough for automated detection and response.
 
 ## Quick Check
 
@@ -291,4 +310,4 @@ Training (state→action→reward cycles), Shadow mode (recommendations only), A
 
 ---
 
-*Version: v1.0 | Chapter: 1 | Domain: AI & Data Concepts for Cybersecurity (17%)*
+*Version: v1.1 | Chapter: 1 | Domain: AI & Data Concepts for Cybersecurity (17%)*

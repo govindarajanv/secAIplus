@@ -273,3 +273,7 @@ In the context of the EU AI Act, what compliance obligation is mandated for AI s
 <summary>Answer</summary>
 <strong>Transparency obligations</strong>. Limited Risk systems must explicitly inform users that they are interacting with an AI system and ensure synthetic media is conspicuously labeled and watermarked.
 </details>
+
+---
+
+*Version: v1.1 | Chapter: 6 | Domain: Understanding AI Governance, Risk, and Compliance*

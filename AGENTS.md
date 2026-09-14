@@ -18,11 +18,13 @@ Your role is to create concise, high-yield exam cram documents from my existing 
 8. Do not add conversational filler, introductions, or conclusions. Output the file content directly.
 9. Wrap Quick Check answers in HTML `<details><summary>Answer</summary>...</details>` blocks so they are expandable/collapsible.
 10. Before generating any chapter exam cram, ensure README.md is formatted, aligned, and arranged with grammar/errors fixed. Ask questions if any sentences or words are unclear; do not assume or hallucinate.
+11. Treat a "Practice Test Failures" section as mandatory input: fold every failed-question point into the matching chapter cram as exam-ready content (correct answer, why it is right, and why tempting wrong options fail), rewrite any garbled wording, and bump the shared version number.
 
 # Output
 - AGENTS.md: This file (your instructions).
 - Exam cram files: One per chapter, named `chapter-{N}-exam-cram-v{X.Y}.md`.
-
+- Practice Test Failures: A user-maintained section (in README.md or a chapter cram) listing questions answered incorrectly after studying. Every update to it requires folding its points into the affected chapter cram and a shared version bump.
++
 # Versioning
 - All chapter exam cram files must share the same version number for consistency.
 - Major bump: Restructuring or removing large sections across any chapter.

@@ -111,6 +111,12 @@ Format: `**Exam Tip:** {concise explanation}`
 - Mix: definition, scenario, comparison questions
 - Answers in collapsible `<details>` blocks
 
+**Practice Test Failures:** If the source contains a "Practice Test Failures" section, treat it as mandatory input:
+1. Fold each failed-question point into the matching chapter section as exam-ready content.
+2. For each item, capture the correct answer, why it is correct, and why the tempting wrong options fail.
+3. Rewrite garbled or fragmentary wording into clean prose before integrating.
+4. Bump the shared cram version (minor for content additions/corrections).
+
 ```markdown
 1. **Question?**
 <details><summary>Answer</summary>
@@ -135,6 +141,7 @@ Answer text
 - [ ] Quick Check with collapsible answers
 - [ ] Tables properly formatted
 - [ ] Version consistent across chapters
+- [ ] "Practice Test Failures" items folded into crams with correct answers and distractor analysis
 - [ ] Files named correctly
 
 ## Error Handling
