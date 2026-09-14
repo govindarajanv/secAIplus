@@ -313,6 +313,8 @@ The greatest risk when deploying a third-party, pre-trained AI model is that it 
 
 Reviewing user access logs tracks which users or systems interacted with the model — useful for incident response and ongoing monitoring — but it provides **minimal insight into the AI's behavioral security posture**. Use it only as a supporting measure, after direct testing of the model's outputs.
 
+Recommending assessment of the types of data collected, possible exposure of sensitive information through AI responses, and risks like data poisoning or prompt injection, then designing appropriate controls to mitigate AI-specific vulnerabilities is the correct answer. This answer shows an understanding that AI threat modeling must address unique AI risks and calls for implementing targeted controls. This directly mirrors best practices for AI-specific threat modeling.
+
 ## Quick Check
 
 1. **What are the seven domains in the MIT AI Risk Repository?**
