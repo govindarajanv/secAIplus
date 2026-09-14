@@ -279,6 +279,14 @@ Thousand-query floods to test DoS resilience.
 Unauthorized data access through AI interface.
 
 ---
+## Practice Test Failures
+
+MIT AI risk repository contains three parts:
+
+AI Risk database—This is the centralized database with over 2,244 records, each record defining an AI risk. The database includes the title of the paper and provides keywords for quick reference. The evidence for each risk is collected and grouped into risk categories. Each risk is explained in detail and supported by evidence from the sources. In addition, the risks are classified into both causal and domain taxonomies.
+Causal Taxonomy of AI Risks—This taxonomy classifies risks based on how they are originated and whether a risk is caused by a decision or action made by AI, human user/developer, or other external factors. It distinguishes whether the risk is caused intentionally, like the expected outcomes of a goal, unintentionally, or even classified as "other", which can't be determined. It also categorizes the risk based on the timing of the risk identified, like before the deployment of the model or if the risk occurs after the training and deployment. This helps security teams trace back the steps to exactly when the risk was identified during the model development lifecycle.
+Domain Taxonomy of AI Risks—The domain taxonomy classifies risks into seven AI risk domains and 23 subdomains, such as (1) Discrimination & Toxicity, (2) Privacy & Security, (3) Misinformation, (4) Malicious Actors & Misuse, (5) Human-Computer Interaction, (6) Socioeconomic & Environmental, and (7) AI System Safety, Failures, & Limitations. These domains help security teams search for keywords and identify risks within the AI system across these domains.
+
 
 ## Quick Check
 
