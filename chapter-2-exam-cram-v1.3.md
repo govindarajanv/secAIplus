@@ -309,11 +309,12 @@ Endpoint access controls at the gateway centrally manage which specific applicat
 
 The greatest risk when deploying a third-party, pre-trained AI model is that it may not have been developed with your organization's security, ethical, or regulatory requirements in mind. The most critical control is to **review and audit the vendor's security certifications and evaluation reports** — this reveals how far the model has been assessed for bias, data privacy, and compliance, exposes gaps between the model's default behaviors and your regulatory/policy obligations, and drives informed accept/configure/reject decisions. Thorough vendor due diligence is foundational before relying on the model in sensitive or regulated environments.
 
-**4. Why reviewing user access logs alone is insufficient**
+**4. AI threat modeling vs. user access log review (scenario)**
 
-Reviewing user access logs tracks which users or systems interacted with the model — useful for incident response and ongoing monitoring — but it provides **minimal insight into the AI's behavioral security posture**. Use it only as a supporting measure, after direct testing of the model's outputs.
+When assessing risks in an AI deployment, recommending an evaluation of the types of data collected, possible exposure of sensitive information through AI responses, and AI-specific risks such as data poisoning or prompt injection, then designing targeted controls to mitigate AI-specific vulnerabilities, is the correct approach. This demonstrates an understanding that AI threat modeling must address risks unique to machine learning workflows rather than relying solely on traditional IT controls. This directly mirrors best practices for AI-specific threat modeling.
 
-Recommending assessment of the types of data collected, possible exposure of sensitive information through AI responses, and risks like data poisoning or prompt injection, then designing appropriate controls to mitigate AI-specific vulnerabilities is the correct answer. This answer shows an understanding that AI threat modeling must address unique AI risks and calls for implementing targeted controls. This directly mirrors best practices for AI-specific threat modeling.
+**Why the tempting wrong option fails:**
+- **Reviewing user access logs alone** — Access logs track which users or systems interacted with the model (useful for incident response and ongoing operational monitoring), but they provide **minimal insight into the AI's behavioral security posture**. Access logs cannot reveal whether training data was poisoned, if prompt injection succeeded, or if model outputs leak confidential information. Access log review should be used only as a supporting measure, after direct testing of the model's outputs and comprehensive AI threat modeling.
 
 ## Quick Check
 
