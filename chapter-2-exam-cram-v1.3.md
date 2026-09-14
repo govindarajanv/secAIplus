@@ -34,7 +34,14 @@ AI threat modeling identifies potential threats and analyzes risks associated wi
 
 1. **AI Risk Database** — centralized database, 2,244+ risk records; each record = one risk with source paper title, keywords, evidence grouped into risk categories; every risk classified into both taxonomies
 2. **Causal Taxonomy** — classifies by origin: AI / human user-developer / external factors; intentional vs unintentional vs "other"; and by **timing of identification** (pre-deployment vs post-training/deployment)
-3. **Domain Taxonomy** — 7 domains, 23 subdomains: Discrimination & Toxicity, Privacy & Security, Misinformation, Malicious Actors & Misuse, Human-Computer Interaction, Socioeconomic & Environmental, AI System Safety Failures & Limitations
+3. **Domain Taxonomy** — 7 domains, 23 subdomains:
+   1. Discrimination & Toxicity
+   2. Privacy & Security
+   3. Misinformation
+   4. Malicious Actors & Misuse
+   5. Human-Computer Interaction
+   6. Socioeconomic & Environmental
+   7. AI System Safety, Failures, & Limitations
 
 ---
 
@@ -285,7 +292,14 @@ The MIT AI Risk Repository contains three parts:
 
 1. **AI Risk Database** — A centralized database with over 2,244 AI risk records. Each record defines one AI risk, includes the source paper's title, and provides keywords for quick reference. Evidence for each risk is collected and grouped into risk categories, explained in detail, and supported by sources. Every risk is classified into both the causal and domain taxonomies.
 2. **Causal Taxonomy of AI Risks** — Classifies risks by how they originate: whether caused by a decision or action of AI, a human user/developer, or other external factors; whether intentional (expected outcome of a goal), unintentional, or "other" (undeterminable). It also categorizes risks by **timing of identification** — before deployment vs. after training/deployment — helping security teams trace exactly when in the model development lifecycle a risk surfaced.
-3. **Domain Taxonomy of AI Risks** — Classifies risks into **seven AI risk domains and 23 subdomains**: (1) Discrimination & Toxicity, (2) Privacy & Security, (3) Misinformation, (4) Malicious Actors & Misuse, (5) Human-Computer Interaction, (6) Socioeconomic & Environmental, and (7) AI System Safety, Failures, & Limitations. These domains help security teams search by keyword and identify risks across areas of the AI system.
+3. **Domain Taxonomy of AI Risks** — Classifies risks into **seven AI risk domains and 23 subdomains**. These domains help security teams search by keyword and identify risks across areas of the AI system:
+   1. Discrimination & Toxicity
+   2. Privacy & Security
+   3. Misinformation
+   4. Malicious Actors & Misuse
+   5. Human-Computer Interaction
+   6. Socioeconomic & Environmental
+   7. AI System Safety, Failures, & Limitations
 
 **2. Endpoint access controls at the AI gateway**
 
