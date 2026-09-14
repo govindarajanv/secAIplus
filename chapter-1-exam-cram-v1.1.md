@@ -197,8 +197,8 @@ Auto-tags raw logs with threat intelligence indicators.
 | **Data lineage** | Records every transformation a dataset undergoes |
 | **Data provenance** | Documents origin, licensing, consent terms |
 | **Data integrity** | Ensures data arrives unchanged; uses digital signatures, append-only blockchain for immutable audit trail |
-| **Data augmentation** | Generates training examples via rotations, flips, noise to improve generalization |
-| **Data balancing** | Realigns training set so rare events receive proportionate attention; uses down-sampling or up-sampling |
+| **Data augmentation** | Generates training examples via rotations, flips, noise to improve generalization. Creates new training samples by transforming existing data so the model learns general patterns instead of memorizing specific examples.|
+| **Data balancing** | Realigns training set so rare events receive proportionate attention; uses down-sampling or up-sampling. But it does not create transformed versions of existing records |
 
 ### AI Pipeline Security
 
@@ -246,6 +246,9 @@ A healthcare organization wants to use patient data from mobile devices to impro
 
 When a security model maintains high accuracy throughout adversarial stress tests, its decision logic can be trusted as resilient enough to support automated detection and response, with rigor comparable to formal cryptographic key ceremony procedures. High accuracy under adversarial stress tests indicates decision logic that is hard to manipulate and reliable enough for automated detection and response.
 
+a retrieval-augmented generation system require strong protections around its vector storage because Even though the data is numeric, it still reflects confidential content, so compromise of this store can expose a large portion of an organization's knowledge.
+
+elements of the reinforcement learning cycle as applied to a cybersecurity response agent (such as an adaptive firewall policy engine) - During training, the sequence "state → action → reward" is executed thousands of times in a lab that replays recorded or synthetic traffic so the agent can refine its policy. The agent repeatedly observes a snapshot of the network environment, selects an action (such as allow, throttle, or block), and then receives a reward score based on how that action affected security and user experience.The reward function can assign positive scores for correctly blocked malicious traffic and negative scores for false positives or added latency, guiding the agent toward an optimal long‑term strategy.
 ## Quick Check
 
 1. **What is the key difference between deep learning and traditional IDS?**
